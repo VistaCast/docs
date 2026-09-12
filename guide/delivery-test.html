@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Rspress v1.47.1">
+    <title data-rh="true">交付测试清单 - VistaCast · 视界云遥</title><meta data-rh="true" name="description" content="AI Visual Autopilot — 纯软件 AI 云监控 · ONVIF/RTSP"/>
+  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><link rel="icon" href="/favicon.svg" type="image/svg+xml"><script defer src="/static/js/styles.73949227.js"></script><script defer src="/static/js/lib-react.79f6c63a.js"></script><script defer src="/static/js/lib-router.4330d024.js"></script><script defer src="/static/js/134.50e3ff43.js"></script><script defer src="/static/js/index.0dec01bd.js"></script><link href="/static/css/styles.56b59350.css" rel="stylesheet"></head>
+
+  <body >
+    <div id="root"><div class="navContainer_d18b1 rspress-nav px-6  sticky_ddfa7"><div class="container_e4235 flex justify-between items-center h-full"><div class="navBarTitle_c5f07"><a href="/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/brand/logo-mark.svg" alt="logo" id="logo" class="rspress-logo"/></div><span>视界云遥</span></a></div><div class="flex flex-1 justify-end items-center"><div class="rightNav_a2fea"><div class="flex sm:flex-1 items-center sm:pl-4 sm:pr-2"><div class="rspress-nav-search-button navSearchButton_df1fb"><button><svg width="18" height="18" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg><p class="searchWord_af2c1">Search</p><div style="opacity:0"><span></span><span>K</span></div></button></div><div class="mobileNavSearchButton_d85a9"><svg width="24" height="24" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg></div></div><div class="rspress-nav-menu menu h-14"><a href="/product/positioning.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">产品</div></a><a href="/architecture/overview.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">架构</div></a><a href="/guide/roadmap.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">路线图</div></a><a href="/ecosystem/luminaryworks.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">生态</div></a><a href="/guide/quick-start.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">开发</div></a></div><div class="flex-center flex-row"><div class="mx-2"><div class="md:mr-2 rspress-nav-appearance"><div class="p-1 border border-solid border-gray-300 text-gray-400  cursor-pointer rounded-md hover:border-gray-600 hover:text-gray-600 dark:hover:border-gray-200 dark:hover:text-gray-200 transition-all duration-300 w-7 h-7"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="dark:hidden" width="18" height="18" fill="currentColor"><path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6m0-10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4M12 4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M12 24c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M5.6 6.6c-.3 0-.5-.1-.7-.3L3.5 4.9c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.1.2-.4.3-.7.3M19.8 20.8c-.3 0-.5-.1-.7-.3l-1.4-1.4c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.2.2-.5.3-.7.3M3 13H1c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M23 13h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M4.2 20.8c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.4.3-.7.3M18.4 6.6c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.5.3-.7.3"></path></svg><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="hidden dark:block" width="18" height="18" fill="currentColor"><path d="M12.1 22h-.9c-5.5-.5-9.5-5.4-9-10.9.4-4.8 4.2-8.6 9-9 .4 0 .8.2 1 .5s.2.8-.1 1.1c-2 2.7-1.4 6.4 1.3 8.4 2.1 1.6 5 1.6 7.1 0 .3-.2.7-.3 1.1-.1.3.2.5.6.5 1-.2 2.7-1.5 5.1-3.6 6.8-1.9 1.4-4.1 2.2-6.4 2.2M9.3 4.4c-2.9 1-5 3.6-5.2 6.8-.4 4.4 2.8 8.3 7.2 8.7 2.1.2 4.2-.4 5.8-1.8 1.1-.9 1.9-2.1 2.4-3.4-2.5.9-5.3.5-7.5-1.1-2.8-2.2-3.9-5.9-2.7-9.2"></path></svg></div></div></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/VistaCast/vistacast" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div><div class="mobileNavMenu_e7045"><div class="navScreen_ec30c  rspress-nav-screen" id="navScreen"><div class="container_c935d"><div class="navMenu_b887b"><div class="navMenuItem_e7978 w-full"><a href="/product/positioning.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">产品</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/architecture/overview.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">架构</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/guide/roadmap.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">路线图</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/ecosystem/luminaryworks.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">生态</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/guide/quick-start.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">开发</div></a></div></div><div class="flex-center flex-col gap-2"><div class="mt-2 navAppearance_bf893 flex justify-center"></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/VistaCast/vistacast" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div></div><button aria-label="mobile hamburger" class=" rspress-mobile-hamburger navHamburger_ac64c text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><circle cx="8" cy="16" r="2" fill="currentColor"></circle><circle cx="16" cy="16" r="2" fill="currentColor"></circle><circle cx="24" cy="16" r="2" fill="currentColor"></circle></svg></button></div></div></div></div><section><div class="docLayout_af141 pt-0"><aside class="sidebar_dd719 rspress-sidebar "><div class="navTitleMask_fb17c"><div class="navBarTitle_c5f07"><a href="/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/brand/logo-mark.svg" alt="logo" id="logo" class="rspress-logo"/></div><span>视界云遥</span></a></div></div><div class="rspress-scrollbar sidebarContent_da296"><nav class="pb-2"><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">入门</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:1;margin-left:12px"><div class="rspress-sidebar-item"><a href="/guide/quick-start.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>快速开始</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/add-camera.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>买回摄像头接到 App</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/deployment-modes.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>三条接入路径</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/camera-module.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>定制摄像头模组</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/device-setup.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>设备接入</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/delivery-test.html" class="link_a7cea menuLink_bb039"><div class="menuItemActive_de63c mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>交付测试清单</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/docker.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>单节点 Docker</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/go-live.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>私有化上线</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/store-box.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>门店盒子 / 家庭壳</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/ui-ux.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>三端场景化 UI</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/client-infer.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>窗口内 YOLO / Chat</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/hybrid-infer.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>混合推理 / 云桥</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/billing.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>计费与落点</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/device-matrix.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>Android 设备矩阵</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/sales.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>销售一页纸</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/store-listing.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>商店 listing 草稿</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/edge.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>边缘节点</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/face.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>人脸名单</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/staff.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>员工行为</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/eval.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>工厂评测</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/customer-confirmation.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>客户确认</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/outbound.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>告警出站</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/guardian.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>Guardian 试点</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/ice-turn.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>ICE / TURN</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/camera-ingest.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>多协议进流</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/esp32-kits.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>ESP32 公开套件</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/oem-partner.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>OEM 伙伴</span></div></a></div><div class="rspress-sidebar-item"><a href="/guide/roadmap.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>产品路线图</span></div></a></div></div></div></section></nav></div></aside><div class="flex-1 relative min-w-0"><div class="rspress-sidebar-menu-container "><div class="rspress-sidebar-menu"><button type="button" class="flex-center mr-auto"><div class="text-md mr-2"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg></div><span class="text-sm">Menu</span></button><button type="button" class="flex-center ml-auto"><span class="text-sm">ON THIS PAGE</span><div class="text-md mr-2" style="transform:rotate(0deg);transition:transform 0.2s ease-out;margin-top:2px"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></button><div class="rspress-local-toc-container "><ul><li><a href="#0-本清单勾不掉的项" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">0. 本清单勾不掉的项</span></a></li><li><a href="#a-自动化不必买摄像头" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">A. 自动化（不必买摄像头）</span></a></li><li><a href="#b-本机-compose-lab不必买摄像头" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">B. 本机 Compose lab（不必买摄像头）</span></a></li><li><a href="#c-真机局域网建议买的摄像头" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">C. 真机局域网（建议买的摄像头）</span></a></li><li><a href="#c1-推荐采购2026-市面未认证" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">C.1 推荐采购（2026 市面，未认证）</span></a></li><li><a href="#c2-不要买会浪费时间" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">C.2 不要买（会浪费时间）</span></a></li><li><a href="#c3-接到电脑的步骤" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">C.3 接到电脑的步骤</span></a></li><li><a href="#c4-常见-rtsp-模板用户名密码换成你的" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">C.4 常见 RTSP 模板（用户名密码换成你的）</span></a></li><li><a href="#d-多协议有设备再做不必为试点先买" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">D. 多协议（有设备再做，不必为试点先买）</span></a></li><li><a href="#e-桌面--手机壳" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">E. 桌面 / 手机壳</span></a></li><li><a href="#f-cloud-bridge不要接支付" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">F. Cloud Bridge（不要接支付）</span></a></li><li><a href="#h-接入向导fr-ux-04--fr-plt-12" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">H. 接入向导（FR-UX-04 / FR-PLT-12）</span></a></li><li><a href="#建议的最小购物车" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">建议的最小购物车</span></a></li></ul></div></div></div><div class="content_ff766 rspress-doc-container flex"><div class="flex-1 overflow-x-auto"><div class="rspress-doc"><!--$--><h1 id="交付测试清单" class="rspress-doc-title text-3xl mb-10 leading-10 tracking-tight title_fb7eb">交付测试清单<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#交付测试清单">#</a></h1>
+<p class="my-4 leading-7">给创始人 / 试点现场用。验证<strong class="font-semibold">当前仓库能跑什么</strong>。空格自己勾。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">不是</strong>生产 F1，<strong class="font-semibold">不是</strong> NPU 认证，<strong class="font-semibold">不是</strong> Cloud Bridge 已售，<strong class="font-semibold">不是</strong>商店过审，<strong class="font-semibold">不是</strong> <code>vistacast-v0.1.0</code> / <code>v0.2.0</code> / <code>v0.3.0</code>。检测默认 <strong class="font-semibold">stub</strong>。预览是 <strong class="font-semibold">JPEG</strong>，不是 H.264 RTP。</p>
+<p class="my-4 leading-7">规格映射：<a href="https://github.com/VistaCast/vistacast/blob/main/spec/delivery-test-checklist.md" target="_blank" rel="noopener noreferrer" class="link_a7cea  link_a9ef4 inline-link_f855c">delivery-test-checklist.md</a>。单节点步骤：<a href="/guide/docker.html" class="link_a7cea  link_a9ef4 inline-link_f855c">Docker</a>。摄像头类型：<a href="https://github.com/VistaCast/vistacast/blob/main/spec/camera-source.md" target="_blank" rel="noopener noreferrer" class="link_a7cea  link_a9ef4 inline-link_f855c">进流协议</a>。开箱向导：<a href="/guide/add-camera.html" class="link_a7cea  link_a9ef4 inline-link_f855c">买回摄像头接到 App</a> · <a href="/guide/device-setup.html" class="link_a7cea  link_a9ef4 inline-link_f855c">设备接入</a>。</p>
+<hr class="my-12 border-t border-solid border-divider-light"/>
+<h2 id="0-本清单勾不掉的项" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">0. 本清单勾不掉的项<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#0-本清单勾不掉的项">#</a></h2>
+<p class="my-4 leading-7">下列即使步骤全绿也保持 ⬜：工厂 F1、误报率 KR、OEM 付费 NRE、真机 NAT 首帧、刷 ROM、法律同意、合作方责任、商店提交、生产 APNs/FCM、Stripe、宣布云桥已售、8 Gen 2 / Dimensity 9400 NNAPI 矩阵、生产 tag。</p>
+<hr class="my-12 border-t border-solid border-divider-light"/>
+<h2 id="a-自动化不必买摄像头" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">A. 自动化（不必买摄像头）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#a-自动化不必买摄像头">#</a></h2>
+<p class="my-4 leading-7">在已 <code>pnpm bootstrap</code> 的 Meta 根：</p>
+<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-bash" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span class="token" style="color:var(--code-token-function)">pnpm</span><span> --dir shared </span><span class="token class-name" style="color:var(--code-token-symbol)">test</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span></span><span class="token" style="color:var(--code-token-function)">pnpm</span><span> --dir server </span><span class="token class-name" style="color:var(--code-token-symbol)">test</span><span>          </span><span class="token" style="color:var(--code-token-comment)"># 含云桥 429 / 边缘健康 409 / 空 Stripe secret</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span></span><span class="token" style="color:var(--code-token-function)">pnpm</span><span> --dir desktop </span><span class="token class-name" style="color:var(--code-token-symbol)">test</span><span>         </span><span class="token" style="color:var(--code-token-comment)"># 含 signing dry-run</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span></span><span class="token" style="color:var(--code-token-function)">pnpm</span><span> --dir mobile </span><span class="token class-name" style="color:var(--code-token-symbol)">test</span><span>          </span><span class="token" style="color:var(--code-token-comment)"># 含 NNAPI SHIM + EAS preview≠prod</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span></span><span class="token" style="color:var(--code-token-function)">pnpm</span><span> --dir desktop signing:dry-run   </span><span class="token" style="color:var(--code-token-comment)"># 缺 CSC 仍 exit 0</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span></span><span class="token" style="color:var(--code-token-function)">pnpm</span><span> accept:m3:fast             </span><span class="token" style="color:var(--code-token-comment)"># M3 试点证据；fixture krEligible=false</span></span></code></pre></div><div class="code-button-group_fb445"><button title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_fb89b"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_ccd3d"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="code-copy-button_c5089" title="Copy code"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_ef942"><path fill="currentColor" d="M28 10v18H10V10zm0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_d5ec0"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9z"></path></svg></button></div></div></div>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">ID</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">用例</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">方法</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">期望</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">A1</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">shared 契约</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>pnpm --dir shared test</code></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">绿。lab/fixture 不能 KR</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">A2</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">server API</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>pnpm --dir server test</code></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">绿。空 <code>CLOUD_BRIDGE_SKU_ID</code> 保持 429</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">A3</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">桌面签名</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>pnpm --dir desktop signing:dry-run</code></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">打印缺变量名；<strong class="font-semibold">exit 0</strong>；不 codesign</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">A4</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">手机壳</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>pnpm --dir mobile test</code></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">WASM/CPU 不能 <code>npuClaimed</code> / <code>meetsFloor</code>；preview APK ≠ production AAB</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">A5</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">M3 证据</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>pnpm accept:m3:fast</code></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">通过；<strong class="font-semibold">不得</strong>当生产 tag</td>
+</tr>
+</tbody>
+</table>
+<hr class="my-12 border-t border-solid border-divider-light"/>
+<h2 id="b-本机-compose-lab不必买摄像头" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">B. 本机 Compose lab（不必买摄像头）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#b-本机-compose-lab不必买摄像头">#</a></h2>
+<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-bash" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span class="token class-name" style="color:var(--code-token-symbol)">cd</span><span> deploy
+</span></span><span style="display:block;padding:0 1.25rem"><span></span><span class="token" style="color:var(--code-token-function)">cp</span><span> .env.example .env
+</span></span><span style="display:block;padding:0 1.25rem"><span></span><span class="token" style="color:var(--code-token-function)">docker</span><span> compose up --build
+</span></span><span style="display:block;padding:0 1.25rem"><span></span><span class="token" style="color:var(--code-token-function)">docker</span><span> compose --profile rtsp up -d</span></span></code></pre></div><div class="code-button-group_fb445"><button title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_fb89b"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_ccd3d"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="code-copy-button_c5089" title="Copy code"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_ef942"><path fill="currentColor" d="M28 10v18H10V10zm0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_d5ec0"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9z"></path></svg></button></div></div></div>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">检查</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">地址</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">API</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><a href="http://127.0.0.1:13100/health" target="_blank" rel="noopener noreferrer" class="link_a7cea  link_a9ef4 inline-link_f855c">http://127.0.0.1:13100/health</a> → 200</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Admin</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><a href="http://localhost:13101" target="_blank" rel="noopener noreferrer" class="link_a7cea  link_a9ef4 inline-link_f855c">http://localhost:13101</a> （用 <code>localhost</code>，不要用无端口的 127.0.0.1）</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7">登录：先 <code>cd LuminaryWorks &amp;&amp; pnpm id:up</code>，或开发开关 <code>PUBLIC_ALLOW_LOCAL_LOGIN=true</code>。</p>
+<p class="my-4 leading-7">模拟 RTSP（MediaMTX <code>testsrc</code> 发布为 <code>/demo</code>，<strong class="font-semibold">不是</strong>物理枪机）Compose 网内地址（<code>ai</code> 探测用此主机名）：</p>
+<p class="my-4 leading-7"><code>rtsp://mediamtx:8554/demo</code></p>
+<p class="my-4 leading-7">探测禁止回环：不要填 <code>rtsp://127.0.0.1:8554/testsrc</code> 或 <code>localhost</code>。默认 <code>PROVIDER=stub</code> / <code>STUB_WALK=true</code> 时客流与入侵是演示振荡，<strong class="font-semibold">不是</strong>真实分析。</p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">ID</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">用例</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">方法</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">期望</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">B1</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">栈起来</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>docker compose up</code></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>/health</code> 200；Admin 能开</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">B2</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">加一路模拟 RTSP</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><strong class="font-semibold">设备接入</strong> 向导或添加摄像头，<code>sourceKind=rtsp</code></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">探测通过（不改心跳）；保存后 <code>ai</code> 日志出现 <code>source=rtsp</code></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">B3</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">客流过线</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">画过线；<code>PROVIDER=stub</code> 且 <code>STUB_WALK=true</code></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">小时 <code>inCount</code>/<code>outCount</code> &gt; 0。<strong class="font-semibold">不是</strong>真人、<strong class="font-semibold">不是</strong>真实分析</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">B4</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">区域入侵</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">画禁区；stub 框进入</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">30s 内 <code>kind=intrusion</code>。<strong class="font-semibold">不是</strong>真人、<strong class="font-semibold">不是</strong>真实分析</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">B5</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">断流离线</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">停 <code>rtsp-publisher</code></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">约 10s–2 min 出 <code>device.offline</code></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">B6</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">误报</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>POST /v1/alerts/:id/false-positive</code></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>state=false_positive</code></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">B8</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">在线枪不停云</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Admin <strong class="font-semibold">计费</strong> 或 <code>GET /internal/v1/cameras/:id/infer-lease</code></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>effectivePlane=edge</code>，<code>cloudBridgeEnabled=false</code>。对该路 <code>POST /internal/v1/cloud-bridge/calls</code> → <strong class="font-semibold">409</strong>。<strong class="font-semibold">不是</strong>已售</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7">预览 JPEG：Compose 网内可用 <code>deploy/scripts/lab-preview-viewer.mjs</code>。<strong class="font-semibold">不是</strong>本机 Chrome 必过。TURN 见 <a href="/guide/ice-turn.html" class="link_a7cea  link_a9ef4 inline-link_f855c">ICE / TURN</a>。</p>
+<hr class="my-12 border-t border-solid border-divider-light"/>
+<h2 id="c-真机局域网建议买的摄像头" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">C. 真机局域网（建议买的摄像头）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#c-真机局域网建议买的摄像头">#</a></h2>
+<p class="my-4 leading-7"><strong class="font-semibold">先买「工程机 / ONVIF Profile S / 可手填 RTSP」</strong>，不要买只能开厂商 App 云回看的消费机。</p>
+<p class="my-4 leading-7">下单前问店家三句，答不上就别买：</p>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">是否 <strong class="font-semibold">ONVIF Profile S</strong>（或至少能开 RTSP）？</li>
+<li class="[&amp;:not(:first-child)]:mt-2">主码流 RTSP 地址格式是什么？能否 <strong class="font-semibold">VLC 直接打开</strong>？</li>
+<li class="[&amp;:not(:first-child)]:mt-2">是否必须装海康/大华/萤石/乐橙/小米 <strong class="font-semibold">App 才能出流</strong>？（必须 = 不要）</li>
+</ol>
+<h3 id="c1-推荐采购2026-市面未认证" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">C.1 推荐采购（2026 市面，未认证）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#c1-推荐采购2026-市面未认证">#</a></h3>
+<p class="my-4 leading-7">这是<strong class="font-semibold">采购建议</strong>，不是兼容认证、不是 F1、不是品牌背书。型号年年改款，以「ONVIF + 局域网 RTSP」为准。</p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th align="center" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">优先级</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">买什么</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">大约价（人民币，2026 电商）</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">为什么买</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">怎么确认</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><strong class="font-semibold">P0 先买 1 台</strong></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><strong class="font-semibold">海康威视</strong> 200 万～400 万像素 <strong class="font-semibold">固定枪机</strong>（工程渠道 <code>DS-2CD2xxx</code> / <code>DS-2CD1xxx</code> 一类，要写 <strong class="font-semibold">ONVIF</strong>）</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">约 200–600</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">门店最常见；RTSP 文档多</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">网线 PoE 或 12V；IE/SADP 或官方工具改 IP；VLC 打开下表 URL</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><strong class="font-semibold">P0 备选</strong></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><strong class="font-semibold">大华</strong> <code>IPC-HFW</code> / <code>IPC-HDW</code> <strong class="font-semibold">枪机或半球</strong>，同样要 ONVIF</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">约 200–600</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">第二常见工程机</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">SmartPSS / ConfigTool 改 IP；VLC</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><strong class="font-semibold">P0 海外/DIY</strong></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><strong class="font-semibold">Reolink</strong> 有线枪机（如 RLC-510A / 810A 一类 <strong class="font-semibold">写明 ONVIF</strong>）</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">约 300–800</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">零售好买；默认就有 RTSP</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">网页后台打开 RTSP；VLC</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><strong class="font-semibold">P1 连锁常见</strong></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><strong class="font-semibold">宇视 Uniview</strong> <code>IPC212x</code> 枪机</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">约 200–500</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">国内连锁多</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">EZStation / 网页；VLC</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><strong class="font-semibold">P1 便宜商超</strong></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><strong class="font-semibold">TP-Link VIGI</strong> 枪机（C300 / C340 一类，确认 <strong class="font-semibold">ONVIF</strong>）</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">约 150–400</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">电商店铺多</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">VIGI 网页；打开 ONVIF/RTSP</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><strong class="font-semibold">P2 协议实验</strong></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><strong class="font-semibold">安信可 ESP32-CAM</strong> 套件</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">约 30–80</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">MJPEG 进流（FR-OEM-08）</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">先浏览器打开 <code>/stream</code>，再 Admin <code>http_mjpeg</code></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><strong class="font-semibold">不必买</strong></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">手机当摄像头、消费云台「只能 App」</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">—</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">不在范围</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">—</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7"><strong class="font-semibold">PoE：</strong> 有交换机就选 PoE 枪机，少一根电源。没有 PoE 就买 12V 枪机 + 适配器。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">分辨率：</strong> 1080p / 4MP 足够。4K 浪费带宽，对 stub 检测没有意义。</p>
+<h3 id="c2-不要买会浪费时间" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">C.2 不要买（会浪费时间）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#c2-不要买会浪费时间">#</a></h3>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">别买</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">原因</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">萤石 / 乐橙 / 小米 / 涂鸦 <strong class="font-semibold">只云回看</strong> 的消费款</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">厂商 App 私有 P2P，产品明确禁止</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Ring / Nest / 只能厂商云的电池机</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">无稳定局域网 RTSP</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">「AI 摄像头」宣称自带跌倒/人脸云端大模型</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">与本产品无关；也不是 F1</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">必须刷魔改固件才出 RTSP 的机型</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">试点不要绑破解</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7">小米/TP-Link <strong class="font-semibold">家用</strong>款偶尔能开 RTSP，但各固件不一致。试点请用上表工程机。</p>
+<h3 id="c3-接到电脑的步骤" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">C.3 接到电脑的步骤<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#c3-接到电脑的步骤">#</a></h3>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">摄像头和跑 <code>deploy</code> 的电脑在<strong class="font-semibold">同一局域网</strong>（或摄像头能路由到 Compose 主机）。</li>
+<li class="[&amp;:not(:first-child)]:mt-2">给摄像头固定 IP（DHCP 预留或静态）。</li>
+<li class="[&amp;:not(:first-child)]:mt-2"><strong class="font-semibold">VLC</strong>：媒体 → 打开网络串流，粘贴 RTSP。有画面再登记 Admin。VLC 都打不开，VistaCast 也打不开。</li>
+<li class="[&amp;:not(:first-child)]:mt-2"><strong class="font-semibold">Admin → 设备接入 → 摄像头</strong>（手机 App 首页「接入摄像头」打开同一向导）：填与 VLC 相同的 URL，先「测试拉流」，再保存。不要指望 ONVIF 自动取码流。界面：<a href="/guide/add-camera.html#wizard" class="link_a7cea  link_a9ef4 inline-link_f855c">买回摄像头接到 App</a>。</li>
+<li class="[&amp;:not(:first-child)]:mt-2">看 <code>ai</code> 容器日志出现拉流 / <code>source=rtsp</code>。断网线应在 2 min 内 <code>device.offline</code>。</li>
+<li class="[&amp;:not(:first-child)]:mt-2">画过线/禁区：真人走过可以看事件，但 <strong class="font-semibold">默认 stub 不是生产准确率</strong>。不要据此勾 F1。</li>
+</ol>
+<h3 id="c4-常见-rtsp-模板用户名密码换成你的" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">C.4 常见 RTSP 模板（用户名密码换成你的）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#c4-常见-rtsp-模板用户名密码换成你的">#</a></h3>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">品牌</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">主码流示例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">海康</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>rtsp://USER:PASS@IP:554/Streaming/Channels/101</code></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">大华</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>rtsp://USER:PASS@IP:554/cam/realmonitor?channel=1&amp;subtype=0</code></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">宇视</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>rtsp://USER:PASS@IP:554/unicast/c1/s0/live</code></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Reolink</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>rtsp://USER:PASS@IP:554/h264Preview_01_main</code></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">VIGI</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">以后台「网络 → ONVIF/RTSP」页显示的为准</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7">子码流（<code>102</code> / <code>subtype=1</code> / <code>h264Preview_01_sub</code>）更省带宽，lab 优先子码流。</p>
+<p class="my-4 leading-7">迅思维等 <strong class="font-semibold">RTMP 推流工业机</strong>：不要填摄像头自己的 <code>:554</code>。让它推到本机 MediaMTX，Admin 填再发布 RTSP。真机步骤：<a href="/guide/device-setup.html#xstrive" class="link_a7cea  link_a9ef4 inline-link_f855c">设备接入 · 迅思维</a>。</p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">ID</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">用例</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">方法</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">期望</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">C1</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">VLC 主/子码流</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">上表 URL</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">有画面、延迟可接受（几秒内）</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">C2</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">接入中心探测 + 登记</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">与 VLC 同一 URL</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">探测 <code>ok</code>；保存后心跳更新。探测本身不改 <code>status</code></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">C3</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">断网离线</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">拔网线或关摄像头</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>device.offline</code></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">C4</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">过线/禁区（可选）</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">真人走一圈</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">可能出事件；<strong class="font-semibold">仍是 stub，不是 F1</strong></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">C5</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">迅思维等 RTMP 推流机</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">推到 MediaMTX，Admin 填再发布 RTSP</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">探测 1080p；绑定 <code>CAMERA_ID</code> 后 <strong class="font-semibold">online</strong>。直拉摄像头 <code>:554</code> 失败<strong class="font-semibold">不算</strong>产品缺陷</td>
+</tr>
+</tbody>
+</table>
+<hr class="my-12 border-t border-solid border-divider-light"/>
+<h2 id="d-多协议有设备再做不必为试点先买" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">D. 多协议（有设备再做，不必为试点先买）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#d-多协议有设备再做不必为试点先买">#</a></h2>
+<p class="my-4 leading-7">无门店盒子、枪机自己推流：见 <a href="/guide/deployment-modes.html#hosted" class="link_a7cea  link_a9ef4 inline-link_f855c">三条接入路径 · B</a>。国标枪把 SIP 改成实验室 ZLM，即路径 B。</p>
+<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-bash" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span class="token class-name" style="color:var(--code-token-symbol)">cd</span><span> deploy
+</span></span><span style="display:block;padding:0 1.25rem"><span></span><span class="token" style="color:var(--code-token-function)">docker</span><span> compose --profile ingest up -d     </span><span class="token" style="color:var(--code-token-comment)"># RTMP / HLS / WHIP / SRT 网关</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span></span><span class="token" style="color:var(--code-token-function)">docker</span><span> compose --profile gb28181 up -d    </span><span class="token" style="color:var(--code-token-comment)"># 已有国标枪才开</span></span></code></pre></div><div class="code-button-group_fb445"><button title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_fb89b"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_ccd3d"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="code-copy-button_c5089" title="Copy code"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_ef942"><path fill="currentColor" d="M28 10v18H10V10zm0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_d5ec0"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9z"></path></svg></button></div></div></div>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">ID</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">用例</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">买/用什么</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">方法</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">期望</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">D1</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">HTTP MJPEG</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">ESP32-CAM（P2）</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">浏览器能开 MJPEG → Admin <code>http_mjpeg</code></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>ai</code> 拉到帧</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">D2</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">RTMP</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">编码器、迅思维工业机或 ESP32-S3 推 <code>rtmp://HOST:1935/hlsram/live0</code></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">MediaMTX ingest；<code>sourceUrl</code> 填再发布 RTSP</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">与 RTSP 同样心跳。直拉摄像头 RTMP 只适合探测，不适合 24/7</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">D3</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">WHIP</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">支持 WHIP 的摄像头/推流端</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">推到 MediaMTX；Admin <code>webrtc</code>，<code>sourceUrl</code> 填<strong class="font-semibold">再发布 RTSP</strong></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><strong class="font-semibold">不是</strong> Admin 预览 WebRTC</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">D4</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">GB/T 28181</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">已有国标枪 + SIP 域</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">ZLM 注册成功后填再发布 RTSP</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><strong class="font-semibold">不是</strong>自研国标平台</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7">厂商 App 私有 P2P：<strong class="font-semibold">不做</strong>，失败也不算产品缺陷。</p>
+<hr class="my-12 border-t border-solid border-divider-light"/>
+<h2 id="e-桌面--手机壳" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">E. 桌面 / 手机壳<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#e-桌面--手机壳">#</a></h2>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">ID</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">用例</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">方法</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">期望</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">E1</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Electron</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>pnpm --dir desktop start</code>（先起 Admin）</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">启动先登录；登录后 Detect / Admin / About；首页「看门店画面」打开 <code>/#/cameras</code>，「接入摄像头」打开 <code>/#/setup?device=edge</code>；Detect 是窗口 YOLO，<strong class="font-semibold">不是</strong>云 GPU</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">E2</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Expo</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>pnpm --dir mobile start</code> + Expo Go <strong class="font-semibold">SDK 57</strong></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">启动先登录（真机先填 LAN Admin）；登录后 About：<code>backend=wasm</code>，NNAPI 否，NPU 否，floor 否；控制台可达后默认可开 <code>/#/cameras</code>，可切 <code>/#/setup?device=mobile</code>；真机拒绝 <code>127.0.0.1</code></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">E3</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">EAS</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">读 <code>mobile/eas.json</code></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">preview = internal APK；production = store AAB；<strong class="font-semibold">不要</strong> <code>eas submit</code></td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7">Android NNAPI 真机矩阵：<a href="/guide/device-matrix.html" class="link_a7cea  link_a9ef4 inline-link_f855c">设备矩阵</a>（全 ⬜）。模拟器勾选无效。</p>
+<hr class="my-12 border-t border-solid border-divider-light"/>
+<h2 id="f-cloud-bridge不要接支付" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">F. Cloud Bridge（不要接支付）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#f-cloud-bridge不要接支付">#</a></h2>
+<p class="my-4 leading-7">默认 <strong class="font-semibold">不要</strong> 填 <code>CLOUD_BRIDGE_SKU_ID</code>。</p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">ID</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">用例</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">方法</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">期望</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">F1</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">无 SKU</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">默认 env</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">超限 429；<code>krEligible=false</code></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">F2</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">有 SKU（仅 lab）</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">测试进程设 <code>CLOUD_BRIDGE_SKU_ID</code></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Admin GET 仍 false；<strong class="font-semibold">不得</strong>改销售页为已售</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7">口径：<a href="/guide/hybrid-infer.html" class="link_a7cea  link_a9ef4 inline-link_f855c">混合推理</a>。</p>
+<hr class="my-12 border-t border-solid border-divider-light"/>
+<h2 id="h-接入向导fr-ux-04--fr-plt-12" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">H. 接入向导（FR-UX-04 / FR-PLT-12）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#h-接入向导fr-ux-04--fr-plt-12">#</a></h2>
+<p class="my-4 leading-7">不必买枪机也可做 H1。真机做 H2。RN 按屏步骤：<a href="/guide/add-camera.html" class="link_a7cea  link_a9ef4 inline-link_f855c">买回摄像头接到 App</a>。运维：<a href="/guide/device-setup.html" class="link_a7cea  link_a9ef4 inline-link_f855c">设备接入</a>。</p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">ID</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">用例</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">方法</th>
+<th align="left" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">期望</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">H1</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Web 摄像头路径</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Admin <code>/#/setup?device=camera</code> + 模拟 RTSP</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">能探测一帧；保存后心跳仍靠 <code>ai</code> 拉流，不是探测改写</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">H2</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">真机</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">VLC 能播 → 向导探测 → 保存</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">与 C2 相同；<strong class="font-semibold">不是</strong> GetStreamUri</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">H3</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">边缘盒</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><code>/#/setup?device=edge</code> 或 Electron「接入摄像头」</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">令牌只显示一次；写入 <code>EDGE_NODE_TOKEN</code></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">H4</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">手机</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">RN 按 <a href="/guide/add-camera.html" class="link_a7cea  link_a9ef4 inline-link_f855c">买回摄像头接到 App</a> 填 LAN IP → 接入摄像头</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">真机拒绝 loopback；向导 <code>/#/setup?device=mobile</code>；检测页不是枪机</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">H5</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">探测脱敏</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">URL 含 <code>user:pass@</code></td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">响应与列表不回显明文密码</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">H6</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">负例</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">厂商 App 云回看</td>
+<td align="left" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">明确失败；<strong class="font-semibold">不算</strong>产品缺陷</td>
+</tr>
+</tbody>
+</table>
+<hr class="my-12 border-t border-solid border-divider-light"/>
+<h2 id="建议的最小购物车" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">建议的最小购物车<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#建议的最小购物车">#</a></h2>
+<p class="my-4 leading-7">试点「一台电脑 + 一台枪机」即可：</p>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2"><strong class="font-semibold">一台</strong>海康或大华 <strong class="font-semibold">ONVIF 枪机</strong>（P0）+ 网线；有 PoE 交换机更好。</li>
+<li class="[&amp;:not(:first-child)]:mt-2">（可选）<strong class="font-semibold">一块</strong> ESP32-CAM，只为 MJPEG。</li>
+<li class="[&amp;:not(:first-child)]:mt-2"><strong class="font-semibold">不要</strong>为了本清单买旗舰手机测 NPU，<strong class="font-semibold">不要</strong>买国标平台、<strong class="font-semibold">不要</strong>买云存套餐。</li>
+</ol>
+<p class="my-4 leading-7">测完把结果记在本页打印件上。要打生产 tag 走 <a href="https://github.com/VistaCast/vistacast/blob/main/spec/release-tag-checklist.md" target="_blank" rel="noopener noreferrer" class="link_a7cea  link_a9ef4 inline-link_f855c">release-tag-checklist.md</a>，且须创始人指定版本号。</p><!--/$--></div><div class="rspress-doc-footer"><footer class="mt-8"><div class="xs:flex pb-5 px-2 justify-end items-center"></div><div class="flex flex-col"></div><div class="flex flex-col sm:flex-row sm:justify-around gap-4 pt-6"><div class="prev_c92d1 flex flex-col"><a href="/guide/device-setup.html" class="link_a7cea pager-link_e0d2d"><span class="desc_dcc01">Previous Page</span><span class="title_a3acb">设备接入</span></a></div><div class="next_c11be flex flex-col"><a href="/guide/docker.html" class="link_a7cea pager-link_e0d2d next_ad355"><span class="desc_dcc01">Next Page</span><span class="title_a3acb">单节点 Docker</span></a></div></div></footer></div></div><div class="aside-container_bc5fa"><div class="flex flex-col"><div id="aside-container" class="relative text-sm font-medium"><div class="leading-7 block text-sm font-semibold pl-3">ON THIS PAGE</div><nav class="mt-1"><ul class="relative"><li><a href="#0-本清单勾不掉的项" title="0. 本清单勾不掉的项" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">0. 本清单勾不掉的项</span></a></li><li><a href="#a-自动化不必买摄像头" title="A. 自动化（不必买摄像头）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">A. 自动化（不必买摄像头）</span></a></li><li><a href="#b-本机-compose-lab不必买摄像头" title="B. 本机 Compose lab（不必买摄像头）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">B. 本机 Compose lab（不必买摄像头）</span></a></li><li><a href="#c-真机局域网建议买的摄像头" title="C. 真机局域网（建议买的摄像头）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">C. 真机局域网（建议买的摄像头）</span></a></li><li><a href="#c1-推荐采购2026-市面未认证" title="C.1 推荐采购（2026 市面，未认证）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">C.1 推荐采购（2026 市面，未认证）</span></a></li><li><a href="#c2-不要买会浪费时间" title="C.2 不要买（会浪费时间）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">C.2 不要买（会浪费时间）</span></a></li><li><a href="#c3-接到电脑的步骤" title="C.3 接到电脑的步骤" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">C.3 接到电脑的步骤</span></a></li><li><a href="#c4-常见-rtsp-模板用户名密码换成你的" title="C.4 常见 RTSP 模板（用户名密码换成你的）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">C.4 常见 RTSP 模板（用户名密码换成你的）</span></a></li><li><a href="#d-多协议有设备再做不必为试点先买" title="D. 多协议（有设备再做，不必为试点先买）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">D. 多协议（有设备再做，不必为试点先买）</span></a></li><li><a href="#e-桌面--手机壳" title="E. 桌面 / 手机壳" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">E. 桌面 / 手机壳</span></a></li><li><a href="#f-cloud-bridge不要接支付" title="F. Cloud Bridge（不要接支付）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">F. Cloud Bridge（不要接支付）</span></a></li><li><a href="#h-接入向导fr-ux-04--fr-plt-12" title="H. 接入向导（FR-UX-04 / FR-PLT-12）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">H. 接入向导（FR-UX-04 / FR-PLT-12）</span></a></li><li><a href="#建议的最小购物车" title="建议的最小购物车" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">建议的最小购物车</span></a></li></ul></nav></div></div></div></div></div></div></section></div>
+    <div id="search-container"></div>
+  </body>
+</html>

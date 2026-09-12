@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Rspress v1.47.1">
+    <title data-rh="true">实现状态 - VistaCast · 视界云遥</title><meta data-rh="true" name="description" content="AI Visual Autopilot — 纯软件 AI 云监控 · ONVIF/RTSP"/>
+  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><link rel="icon" href="/favicon.svg" type="image/svg+xml"><script defer src="/static/js/styles.73949227.js"></script><script defer src="/static/js/lib-react.79f6c63a.js"></script><script defer src="/static/js/lib-router.4330d024.js"></script><script defer src="/static/js/134.50e3ff43.js"></script><script defer src="/static/js/index.0dec01bd.js"></script><link href="/static/css/styles.56b59350.css" rel="stylesheet"></head>
+
+  <body >
+    <div id="root"><div class="navContainer_d18b1 rspress-nav px-6  sticky_ddfa7"><div class="container_e4235 flex justify-between items-center h-full"><div class="navBarTitle_c5f07"><a href="/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/brand/logo-mark.svg" alt="logo" id="logo" class="rspress-logo"/></div><span>视界云遥</span></a></div><div class="flex flex-1 justify-end items-center"><div class="rightNav_a2fea"><div class="flex sm:flex-1 items-center sm:pl-4 sm:pr-2"><div class="rspress-nav-search-button navSearchButton_df1fb"><button><svg width="18" height="18" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg><p class="searchWord_af2c1">Search</p><div style="opacity:0"><span></span><span>K</span></div></button></div><div class="mobileNavSearchButton_d85a9"><svg width="24" height="24" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg></div></div><div class="rspress-nav-menu menu h-14"><a href="/product/positioning.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">产品</div></a><a href="/architecture/overview.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">架构</div></a><a href="/guide/roadmap.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">路线图</div></a><a href="/ecosystem/luminaryworks.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">生态</div></a><a href="/guide/quick-start.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">开发</div></a></div><div class="flex-center flex-row"><div class="mx-2"><div class="md:mr-2 rspress-nav-appearance"><div class="p-1 border border-solid border-gray-300 text-gray-400  cursor-pointer rounded-md hover:border-gray-600 hover:text-gray-600 dark:hover:border-gray-200 dark:hover:text-gray-200 transition-all duration-300 w-7 h-7"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="dark:hidden" width="18" height="18" fill="currentColor"><path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6m0-10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4M12 4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M12 24c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M5.6 6.6c-.3 0-.5-.1-.7-.3L3.5 4.9c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.1.2-.4.3-.7.3M19.8 20.8c-.3 0-.5-.1-.7-.3l-1.4-1.4c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.2.2-.5.3-.7.3M3 13H1c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M23 13h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M4.2 20.8c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.4.3-.7.3M18.4 6.6c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.5.3-.7.3"></path></svg><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="hidden dark:block" width="18" height="18" fill="currentColor"><path d="M12.1 22h-.9c-5.5-.5-9.5-5.4-9-10.9.4-4.8 4.2-8.6 9-9 .4 0 .8.2 1 .5s.2.8-.1 1.1c-2 2.7-1.4 6.4 1.3 8.4 2.1 1.6 5 1.6 7.1 0 .3-.2.7-.3 1.1-.1.3.2.5.6.5 1-.2 2.7-1.5 5.1-3.6 6.8-1.9 1.4-4.1 2.2-6.4 2.2M9.3 4.4c-2.9 1-5 3.6-5.2 6.8-.4 4.4 2.8 8.3 7.2 8.7 2.1.2 4.2-.4 5.8-1.8 1.1-.9 1.9-2.1 2.4-3.4-2.5.9-5.3.5-7.5-1.1-2.8-2.2-3.9-5.9-2.7-9.2"></path></svg></div></div></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/VistaCast/vistacast" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div><div class="mobileNavMenu_e7045"><div class="navScreen_ec30c  rspress-nav-screen" id="navScreen"><div class="container_c935d"><div class="navMenu_b887b"><div class="navMenuItem_e7978 w-full"><a href="/product/positioning.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">产品</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/architecture/overview.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">架构</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/guide/roadmap.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">路线图</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/ecosystem/luminaryworks.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">生态</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/guide/quick-start.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">开发</div></a></div></div><div class="flex-center flex-col gap-2"><div class="mt-2 navAppearance_bf893 flex justify-center"></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/VistaCast/vistacast" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div></div><button aria-label="mobile hamburger" class=" rspress-mobile-hamburger navHamburger_ac64c text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><circle cx="8" cy="16" r="2" fill="currentColor"></circle><circle cx="16" cy="16" r="2" fill="currentColor"></circle><circle cx="24" cy="16" r="2" fill="currentColor"></circle></svg></button></div></div></div></div><section><div class="docLayout_af141 pt-0"><aside class="sidebar_dd719 rspress-sidebar "><div class="navTitleMask_fb17c"><div class="navBarTitle_c5f07"><a href="/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/brand/logo-mark.svg" alt="logo" id="logo" class="rspress-logo"/></div><span>视界云遥</span></a></div></div><div class="rspress-scrollbar sidebarContent_da296"><nav class="pb-2"><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">工程</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:1;margin-left:12px"><div class="rspress-sidebar-item"><a href="/engineering/spec-driven.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>Spec 驱动开发</span></div></a></div><div class="rspress-sidebar-item"><a href="/engineering/m3-acceptance.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>M3 P0 验收编排</span></div></a></div><div class="rspress-sidebar-item"><a href="/engineering/implementation-status.html" class="link_a7cea menuLink_bb039"><div class="menuItemActive_de63c mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>实现状态</span></div></a></div></div></div></section></nav></div></aside><div class="flex-1 relative min-w-0"><div class="rspress-sidebar-menu-container "><div class="rspress-sidebar-menu"><button type="button" class="flex-center mr-auto"><div class="text-md mr-2"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg></div><span class="text-sm">Menu</span></button><button type="button" class="flex-center ml-auto"><span class="text-sm">ON THIS PAGE</span><div class="text-md mr-2" style="transform:rotate(0deg);transition:transform 0.2s ease-out;margin-top:2px"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></button><div class="rspress-local-toc-container "><ul><li><a href="#里程碑" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">里程碑</span></a></li><li><a href="#文档--spec" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">文档 / Spec</span></a></li><li><a href="#代码仓" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">代码仓</span></a></li><li><a href="#m1-核心-fr摘要" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">M1 核心 FR（摘要）</span></a></li><li><a href="#m2-核心-fr摘要" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">M2 核心 FR（摘要）</span></a></li><li><a href="#m3-p0-fr非生产试点" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">M3 P0 FR（非生产试点）</span></a></li><li><a href="#fr-eco-05-doerflowm4-可选非生产" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">FR-ECO-05 DoerFlow（M4 可选，非生产）</span></a></li></ul></div></div></div><div class="content_ff766 rspress-doc-container flex"><div class="flex-1 overflow-x-auto"><div class="rspress-doc"><!--$--><h1 id="实现状态" class="rspress-doc-title text-3xl mb-10 leading-10 tracking-tight title_fb7eb">实现状态<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#实现状态">#</a></h1>
+<blockquote class="border-l-2 border-solid border-divider pl-4 my-6 transition-colors duration-500 blockquote_f1063">
+<p class="my-4 leading-7">诚实原则：⬜ 未开始 · 🟡 进行中 · ✅ 完成 · 🔴 阻塞</p>
+</blockquote>
+<p class="my-4 leading-7">最后更新：2026-09-12（状态矩阵 <strong class="font-semibold">2.0.67</strong>）</p>
+<h2 id="里程碑" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">里程碑<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#里程碑">#</a></h2>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th align="center" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">里程碑</th>
+<th align="center" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">状态</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">D0 Blueprint</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">2026-08-31 创始人确认战略 1.1 + 路线图以当前仓库为准；<strong class="font-semibold">不</strong>勾生产 tag</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">M1 Horizon</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">切片 1–10 已编码；playbook §6 本机 lab 已勾选；<strong class="font-semibold">未</strong>打 <code>vistacast-v0.1.0</code>（stub / 非真机）</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">M2 Sentinel</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">必须切片 1–9 已关闭；切片 10–16 与评测脚手架（切片 17–19）已做；切片 20–40 客户确认推迟 + Admin EHS + 规则删除/Resolve/PATCH + 摄像头 PATCH/删除/ONVIF 库存/心跳列 + Webhook PATCH + 通知渠道 PATCH + 人脸名单 PATCH / photoRef + OTA 包删除/PATCH + 节点解绑 OTA + 节点绑定/解绑摄像头 + 节点改名 + 能力位开关 + 节点删除 + Admin 删除二次确认 + API 自动化验收 + Admin Playwright；F1 真集跑分与 OEM 未勾；<strong class="font-semibold">未</strong>打 <code>vistacast-v0.2.0</code></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">M3 Embedded</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">P0–M3.5 已编码。<strong class="font-semibold">M3.6 切片 0–5 已关</strong>（含 Capability HTTP）。M3.8 SHIM / M3.9 套餐+webhook 形状（未售） / M3.10 脚手架。商店 App / 自建 GPU / NRE / 真机 NAT / tag / 已售云桥 / NNAPI 真机 <strong class="font-semibold">仍阻塞</strong></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">M4 Nexus</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"><strong class="font-semibold">可选</strong> FR-ECO-05 实验室适配器默认关；FR-ECO-07 发送器默认关；DataTalk / Re-ID ⬜</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">M5 Module</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">⬜</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">定制模组 / 托管进流 <strong class="font-semibold">规格先行</strong>；量产未立项</td>
+</tr>
+</tbody>
+</table>
+<h2 id="文档--spec" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">文档 / Spec<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#文档--spec">#</a></h2>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">交付物</th>
+<th align="center" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">战略 / 定位 / 路线 1.1</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">M1 / M2 / M3 实现手册</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ M1/M2 必须切片关闭（F1/OEM 未勾）；M3 P0 切片 0–10 关闭；M3.1–M3.3 已编码（非生产、非商店 App、非真机 NAT）</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">架构 1.1</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">事件 schema</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Rspress 文档站</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 源码已对齐 M2 出站 + M3 Guardian 试点；公开站仅 GitHub Pages，待推 Meta CI</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">ONVIF L1</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">AI Runtime L1</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">兼容矩阵</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 最小集 + FR-PLT-10 多协议；非认证</td>
+</tr>
+</tbody>
+</table>
+<h2 id="代码仓" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">代码仓<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#代码仓">#</a></h2>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">模块</th>
+<th align="center" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">MetaRepo (vistacast)</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ spec + docs + artifacts；2.0.67：OpenAPI create body + hangup <code>endedAt</code> honesty</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">shared</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ Zod / 几何 / 信令 / 事件流 + M3 household/care/OEM + M3.1 ICE/claim/members + M3.2 adapter/SoC/firmware + M3.3 branding DTO + M3.6 placement/bridge/companion-report + M3.9 SKU/invoice/plan/lease + <strong class="font-semibold">FR-ECO-05 DoerFlow 合同</strong>；2.0.51：extra= 拒绝 HoldMs/clipKind/clipRef + DL sanitize 保留 lab 元数据（单测）；2.0.54：<code>drill</code> 入 <code>ALERT_PAYLOAD_EXTRA_FLAGS</code>（lab webhook drill 元数据；非生产指标 / 非 MP4/VOD / 非 care）；2.0.56：<code>sanitizeSmartSiteExportAlert</code> <strong class="font-semibold">保留</strong> lab <code>payload.drill</code>（仍剥离 clipRef/care/media-shaped；非生产指标 / 非 MP4/VOD / 非 care）；2.0.58：DoerFlow <code>vistacastAlertEventDataSchema</code> <strong class="font-semibold">显式拒绝</strong> <code>drill</code>（summary-only；非 inbox extras；schema <strong class="font-semibold">未</strong>扩展）；2.0.60：<code>createPreviewSessionRequestSchema</code> <strong class="font-semibold">仅</strong> jpeg/webrtc（拒绝其他 mode；preview 信令 <strong class="font-semibold">不是</strong> Event Engine / <strong class="font-semibold">不是</strong> VOD）；2.0.61：shipped packs <code>hasEvalSet === false</code>（含 home-safety；显式单测锁定；packs ≠ F1）；2.0.64：<code>reportPreviewPathRequestSchema</code> 锁定 <code>p2p</code>/<code>turn</code>/<code>failed</code>（+ optional firstFrameMs；拒绝 VOD-ish path；path telemetry <strong class="font-semibold">不是</strong> Event Engine / <strong class="font-semibold">不是</strong> VOD）；2.0.65：<code>SDK_CORE_SURFACE</code> 含 <code>POST /v1/streams/sessions/:sessionId/path</code>；<code>signalingOutboundSchema</code> 严格拒绝非法 ready.previewMode（mp4/vod/junk；<code>ai</code> 仍先 strip 再 parse 见 2.0.64）；2.0.66：<code>p2pSessionSchema</code> 锁定 <code>path: failed</code>（+ optional previewMode/firstFrameMs 单测）；<code>SDK_CORE_SURFACE</code> 含 hangup；2.0.67：<code>signalingHangupSchema</code> 拒绝 media/path/vod extras（单测）——path telemetry / hangup 信令 <strong class="font-semibold">不是</strong> Event Engine / <strong class="font-semibold">不是</strong> VOD；<strong class="font-semibold">不是</strong>商店 SDK</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">server</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 M1/M2 + M3 P0 + M3.1 claim/members/HMAC ICE + M3.2 firmware/SoC + M3.3 租户品牌 / public branding；<strong class="font-semibold">M3.6/M3.9 云桥按帧/次切断 + 套餐/租约/Stripe webhook 形状（非已售）</strong>；<strong class="font-semibold">FR-OEM-07 lab Capability GET</strong>；<strong class="font-semibold">FR-ECO-05 默认关</strong>；2.0.52：<code>buildDoerflowAlertEventData</code> + webhook drill sample clipKind/HoldMs；2.0.53：MQTT + <code>/v1/events</code> 单测保留 drill-shaped clipKind/sittingHoldMs；2.0.54：<code>extras.drill === true</code> 经 shared allowlist 拷贝至 alert payload（lab only）；2.0.55：<code>alertExtraContainment(&quot;drill&quot;)</code> SQL/json_extract 单测覆盖 Admin <code>extra=drill</code>；2.0.57：Notify 模板可选 <code>{{drill}}</code>；DoerFlow builder 单测锁定 drill-shaped 仍丢弃 drill/clipKind/HoldMs；2.0.58：email/DingTalk 插值 <code>{{drill}}</code>（与企微 parity）；2.0.59：detection payload 拷贝 <strong class="font-semibold">从不</strong>镜像 care escalation / auto-120 extras（与 drill 并存时仅 allowlist；非 care 生产）；2.0.60：MQTT <strong class="font-semibold">仍</strong>跳过 care（即便 payload 另有 lab <code>drill</code>；care 永不 MQTT；drill 仅 care 缺席）；2.0.61：EventsHub 单测证明 care+drill 上 Admin live stream（对比 MQTT 仍跳过 care；Admin WS ≠ MQTT care 策略）；2.0.62：Webhook 单测证明 <strong class="font-semibold">仍</strong>投递 care+drill（对比 MQTT 跳过；Webhook/EventsHub ≠ MQTT care 策略）；<code>resolveSessionPreviewMode</code> 默认 jpeg；2.0.63：<code>notifyRuntimeNeed</code> 有值则带 jpeg/webrtc、undefined 则 omit（runtime 默认 jpeg；preview 信令 <strong class="font-semibold">不是</strong> Event Engine / <strong class="font-semibold">不是</strong> VOD）；2.0.67：<code>toP2p</code> 映射锁定 <code>endedAt</code> / path telemetry 字段（REST hangup 设 <code>endedAt</code>；path POST 分离）——hangup/path <strong class="font-semibold">不是</strong> Event Engine / <strong class="font-semibold">不是</strong> VOD；<strong class="font-semibold">FR-ECO-07 发送器默认关</strong></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">ai</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 Runtime + 过线/多边形 + 心跳 + JPEG/H264 预览；<code>pnpm eval</code> 脚手架；可选 EDGE_NODE_TOKEN；<code>STUB_FACE</code>；<code>STUB_STAFF</code>；OTA poll/rollback；固件平面暂存；<code>lab-jpeg</code>；Class B/C 拒绝 Node 启动；care <strong class="font-semibold">仅候选</strong>；桩检测；<strong class="font-semibold">M3.6 平面选路 / 云桥限流 + 控制面预占；租约闸门停云（非已售 SKU）</strong>；2.0.53：fixture <code>webhook-drill-sample.json</code> 镜像 drill extras（≠ F1；非 clip 闸门）；2.0.55：单测锁定 <code>extras.drill</code>（及 HoldMs/clipKind alone）<strong class="font-semibold">不是</strong> clip 闸门；2.0.58：map/ingest 保留 <code>extras.drill</code>（lab metadata mirror；非 clip 闸门）；2.0.59：<code>sanitizeCareExtras</code> <strong class="font-semibold">保留</strong> lab <code>drill</code>，<strong class="font-semibold">剥离</strong> <code>call_120</code> / stage / escalate（非 auto-120 / 非 care 生产）；2.0.61：home-safety <code>hasEvalSet</code> 仍 false（显式单测锁定；packs ≠ F1）；2.0.63：PreviewController ready omit → jpeg（FR-RTC-08；preview 信令 <strong class="font-semibold">不是</strong> Event Engine / <strong class="font-semibold">不是</strong> VOD）；2.0.64：ready 非法 <code>previewMode</code>（mp4/vod/junk）忽略 → jpeg 默认（同 omit；preview 信令 <strong class="font-semibold">不是</strong> Event Engine / <strong class="font-semibold">不是</strong> VOD）；2.0.67：hangup WS 停 preview sender / 下调 webrtc count——hangup <strong class="font-semibold">不是</strong> Event Engine / <strong class="font-semibold">不是</strong> VOD</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">web</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 Admin + M3 试点页 + <strong class="font-semibold">FR-UX 场景化导航 / 浅色画布 / i18n</strong> + <strong class="font-semibold"><code>/#/setup</code> 设备接入</strong> + <strong class="font-semibold">计费页（非收银台）</strong>；预览 jpeg/webrtc；Playwright（stub API + M3 fixture）；2.0.52：Alerts <code>extra=</code> filter options 单测不含 HoldMs/clipKind；2.0.53：Webhooks <code>drillHint</code> 文档化 clipKind/sittingHoldMs（单测）；2.0.54：Alerts <code>extra=drill</code> filter + Tag（<code>payload.drill === true</code>；lab webhook drill only）；2.0.55：live events 解析保留 <code>payload.drill</code> 元数据（非 bytes/MP4/VOD）；2.0.56：list/export 筛选选中时带 <code>extra=drill</code>；CSV 仍九列（<code>drill</code> <strong class="font-semibold">不</strong>成列）；2.0.57：Admin Notify hint 文档化 <code>{{drill}}</code>（lab webhook drill / 提醒 metadata only）；2.0.59：Admin 展示 drill + Event Engine clip/HoldMs tags，<strong class="font-semibold">无</strong>视频播放器（非 MP4/VOD / 非 auto-120 / 非 care 生产）；2.0.61：preview 页 POST <code>{ previewMode }</code>（源码/单测锁定；preview 信令 <strong class="font-semibold">不是</strong> Event Engine / <strong class="font-semibold">不是</strong> VOD）；2.0.62：<code>parsePreviewModeQuery</code> 默认 webrtc（除非 <code>mode=jpeg</code>）；2.0.63：Admin 仍 POST 显式 <code>previewMode</code>（URL 默认 webrtc ≠ server/ai omit→jpeg；preview 信令 <strong class="font-semibold">不是</strong> Event Engine / <strong class="font-semibold">不是</strong> VOD）；2.0.64：<code>resolveIcePath</code> remote relay → turn（FR-RTC-05；path telemetry <strong class="font-semibold">不是</strong> Event Engine / <strong class="font-semibold">不是</strong> VOD）；2.0.65：peer ICE failed → <code>flushTelemetry(&quot;failed&quot;)</code>（FR-RTC-05）；2.0.66：peer hangup POST <code>/v1/streams/sessions/${sessionId}/hangup</code> 源码锁定（FR-RTC-08；hangup/path telemetry <strong class="font-semibold">不是</strong> Event Engine / <strong class="font-semibold">不是</strong> VOD）</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">sdk</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 thin fetch 客户端；2.0.60：<code>createPreviewSession</code> 对齐 <code>CreatePreviewSessionRequest</code> body（jpeg/webrtc）；2.0.65：<code>reportPreviewPath</code> → <code>POST /v1/streams/sessions/:id/path</code>（<code>SDK_CORE_SURFACE</code>）；2.0.66：<code>hangupPreviewSession</code> → <code>POST .../sessions/:id/hangup</code>（<code>SDK_CORE_SURFACE</code>）；2.0.67：OpenAPI create body + hangup <code>endedAt</code> honesty 对齐（sdk 表面不变）——<strong class="font-semibold">未</strong> npm publish；不是商店 SDK；hangup/path telemetry / preview 信令 <strong class="font-semibold">不是</strong> Event Engine / <strong class="font-semibold">不是</strong> VOD</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">deploy</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 Compose + overlay 六件套 + prod overlay（回环绑定 / env 门闩）；coturn 共享模块；control-plane <code>caddy/Caddyfile.example</code>；可选 care simulator（默认关）</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">client-infer</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 窗口 YOLO/Chat WASM（:13104）；desktop/mobile surface；无权重不假装检出；WASM 窗口 <strong class="font-semibold">不是</strong> <code>ai</code> EventEngine；不是云 GPU</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">desktop / mobile</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 Electron 工作站 <strong class="font-semibold">先登录</strong> 再 Home/Detect/Admin/Diagnostics（深链 <code>/setup?device=edge</code>）；RN 伴随 <strong class="font-semibold">先登录</strong> 再 Home/Detect/Console/Settings（深链 <code>device=mobile</code>）；Expo <strong class="font-semibold">SDK 57</strong>；不是商店包</td>
+</tr>
+</tbody>
+</table>
+<h2 id="m1-核心-fr摘要" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">M1 核心 FR（摘要）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#m1-核心-fr摘要">#</a></h2>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">FR</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">描述</th>
+<th align="center" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PLT-09</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">本地登录</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PLT-05</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">统一登录</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ Headless OIDC</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PLT-06</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Casbin 权限</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 角色 ACL + <code>site_grants</code> + Admin Users（含改角色）</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PLT-01</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">站点管理</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ Sites 页创建/重命名/删除；按站 purge 事件</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PLT-02</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">ONVIF 发现</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 WS-Discovery L1；Admin 可填/PATCH 凭据（不回读密码）；Playwright Use 预填；<strong class="font-semibold">不是</strong> GetStreamUri</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PLT-12</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">进流探测</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 <code>POST /v1/cameras/probe-source</code>；ffmpeg 拉一帧；不写心跳/告警；<strong class="font-semibold">不是</strong> GetStreamUri</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PLT-03</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">摄像头健康</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 心跳 ingest + 2 min 无心跳；本机停模拟 RTSP 约 10s 出 <code>device.offline</code></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PLT-08</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Docker 部署</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 本机 <code>/health</code> + 生产 overlay（非 K8s）</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-RUL-01</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">基础规则</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ API + 画区；夜间 UTC 22:00–06:00 日程已验</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-RUL-03</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">告警分级</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 规则/Webhook 级别</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-RUL-02</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">告警去重</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-RUL-04</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Webhook</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ Compose catcher + Admin 保存/编辑/删除（PATCH 省略 secret 则保留）；<code>POST /v1/webhooks/:id/test</code> drill；lab Cloud Sync = full AlertEvent JSON 元数据（非 bytes/MP4/VOD）；2.0.52：drill payload 含 lab sample <code>clipKind</code>（+ optional HoldMs）供元数据 Cloud Sync 校验——非 bytes/VOD/生产事件；2.0.53：Admin Webhooks UI <code>drillHint</code> 文档化 sample metadata（<code>clipKind</code> / <code>sittingHoldMs</code>；web 单测；非视频播放器）；2.0.54：<code>drill</code> 入 <code>ALERT_PAYLOAD_EXTRA_FLAGS</code>；Admin <code>extra=drill</code> + Tag；server 拷贝 <code>extras.drill === true</code>——lab webhook drill / sample metadata only，非生产指标 / 非 MP4/VOD / 非 care；2.0.62：单测证明 Webhook <strong class="font-semibold">仍</strong>投递 care+drill（对比 MQTT 跳过 care；Webhook/EventsHub ≠ MQTT care 策略；webhook 可带 care，MQTT 永不）</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-RUL-07</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">确认/误报</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ <code>false_positive</code> 本机已验</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-EDG-02</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Outbox</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-AI-03</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">客流快照</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 本机小时 <code>inCount</code>&gt;0（stub 振荡）</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-AI-04</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">区域入侵</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 本机 stub 进入已出 <code>intrusion</code>；非真人</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-RTC-01</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">P2P 信令</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-RTC-02</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">STUN/TURN</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 自建 STUN + TURN UDP/TCP（profile <code>turn</code>）</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-RTC-03</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">按需拉流</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ hangup 停 JPEG/H264 发送端；2.0.67：hangup WS 停 runtime sender；REST hangup 设 <code>endedAt</code>；path POST 分离——<strong class="font-semibold">不是</strong> Event Engine / <strong class="font-semibold">不是</strong> VOD</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-RTC-05</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">连接遥测</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ <code>p2p</code>/<code>turn</code>/<code>failed</code> + 首帧 ms；2.0.64：shared <code>reportPreviewPathRequestSchema</code> 锁定 <code>p2p</code>/<code>turn</code>/<code>failed</code>（+ optional firstFrameMs；拒绝 VOD-ish path）；Admin <code>resolveIcePath</code> remote relay → turn；2.0.65：<code>SDK_CORE_SURFACE</code> + <code>@vistacast/sdk</code> <code>reportPreviewPath</code> → <code>POST .../sessions/:id/path</code>；Admin peer ICE failed → <code>flushTelemetry(&quot;failed&quot;)</code>；2.0.66：shared <code>p2pSessionSchema</code> 锁定 <code>path: failed</code>（+ optional previewMode/firstFrameMs 单测）；<code>SDK_CORE_SURFACE</code> 含 hangup；OpenAPI <code>POST .../path</code> requestBody；2.0.67：OpenAPI hangup 200 <code>endedAt</code> honesty；<code>toP2p</code> 锁定 path telemetry 字段；path POST 仍分离——path telemetry / hangup 信令 <strong class="font-semibold">不是</strong> Event Engine / <strong class="font-semibold">不是</strong> VOD；<strong class="font-semibold">不是</strong>商店 SDK；<strong class="font-semibold">不是</strong>计费</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-RTC-07</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">大陆可达 ICE</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 禁止默认 Google STUN；<code>iceTransportPolicy=all</code></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-RTC-08</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">jpeg / webrtc</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 双模式；Admin 无首帧/ICE failed → JPEG；2.0.60：<code>@vistacast/sdk</code> <code>createPreviewSession</code> 发送 <code>CreatePreviewSessionRequest</code> body；shared schema 拒绝非 jpeg/webrtc；sdk 客户端单测覆盖 body；2.0.61：Admin preview 页 POST <code>{ previewMode }</code>（源码/单测锁定）；2.0.62：server <code>resolveSessionPreviewMode</code> 默认 jpeg；Admin URL <code>parsePreviewModeQuery</code> 默认 webrtc（除非 <code>mode=jpeg</code>）；2.0.63：<code>ai</code> PreviewController ready omit → jpeg；<code>notifyRuntimeNeed</code> 有值则带 jpeg、undefined 则 omit（runtime 默认 jpeg）；Admin URL <code>?mode=</code> 默认 webrtc；server/ai omit → jpeg；Admin 仍 POST 显式 <code>previewMode</code>；2.0.64：<code>ai</code> ready 非法 <code>previewMode</code>（mp4/vod/junk）忽略 → jpeg 默认（同 omit）；2.0.65：shared <code>signalingOutboundSchema</code> 严格拒绝非法 ready.previewMode（mp4/vod/junk）；<code>ai</code> 仍先 strip 再 parse（2.0.64）；2.0.66：<code>@vistacast/sdk</code> <code>hangupPreviewSession</code>；Admin peer POST hangup 源码锁定；2.0.67：OpenAPI create body `{ previewMode?: jpeg</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-ADM-01</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">仪表盘</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 在线 / 今日告警 / 客流 / 工厂 kind 今日计数（stub，不是 F1）</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-ADM-02</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">摄像头列表</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 列表 + RTSP/健康/<code>lastHeartbeatAt</code>/站点 + 预览；可 PATCH 名称/RTSP/ONVIF（不可改站点；不回读密码）；管理员可 DELETE（级联规则/告警/客流）</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-ADM-03</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">实时事件流</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ <code>/v1/events</code>（<code>{ type: &quot;alert&quot;, alert }</code> 元数据 Cloud Sync；2.0.49：Admin 客户端解析测试保留 clipKind/HoldMs；2.0.53：EventsHub 单测证明 drill-shaped AlertEvent 保留 <code>drill</code> / <code>clipKind</code> / <code>sittingHoldMs</code>（无 clipRef/care）；2.0.55：Admin live events 解析保留 <code>payload.drill</code> 元数据；2.0.61：EventsHub 单测证明 care+drill 上 Admin live stream（对比 MQTT 仍跳过 care；Admin WS ≠ MQTT care 策略）；非 bytes/MP4/VOD）</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-ADM-04</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">告警历史筛选/导出</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ CSV + 多维筛选；lab 可选 query <code>extra</code>=一个 allowlist 布尔（含 <code>zoneInside</code> / <code>clipScreenshot</code> / <code>drill</code>）；未知 extra 400；JSONB payload 含 <code>{extra: true}</code>；不是单页客户端过滤；CSV 无 extras 列；整数 extras（clipJpegCount / clipDurationMs / fallHoldMs / sittingHoldMs / lyingHoldMs / stillHoldMs / loiterHoldMs / nightHoldMs / vacantHoldMs / aloneHoldMs）不进 extra=；字符串 <code>extras.clipKind</code>（`&quot;jpeg_ring&quot;</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-ADM-07</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">规则编辑器 UI</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 画区 / 过线；工厂 kind 可选危险区；可编辑/删除</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-ADM-09</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">P2P 播放器</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 JPEG canvas + H264 <code>&lt;video&gt;</code>；webrtc 无首帧 → JPEG；§6 lab viewer 仍验 JPEG</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PRV-01</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">事件优先</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 无默认云录像</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PRV-02</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">租户隔离</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ Tenant B 读 A 摄像头 404</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PRV-03</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">保留期与删除</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ TTL 默认 90 天；按站 purge / 删站点</td>
+</tr>
+</tbody>
+</table>
+<h2 id="m2-核心-fr摘要" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">M2 核心 FR（摘要）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#m2-核心-fr摘要">#</a></h2>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">FR</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">描述</th>
+<th align="center" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PLT-07</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">审计日志</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 登录 / 建规则 / 改规则 / 删规则 / 告警导出；Admin Audit 只读；不含密码</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-ADM-05</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">客流报表</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 日/周/月（UTC）+ 多店对比；由小时快照聚合；非零售级</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-RUL-08</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">复合条件</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 同摄扁平 AND/OR；无嵌套、无跨摄</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-ECO-01</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">REST 导出</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ `/v1/export/alerts</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-AI-08</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">远程 Provider</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 可选 HTTP JSON 适配器；默认 stub；非托管 GPU、非 F1</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-AI-05</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">工厂异常</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ fall/fight/smoke kind + stub；评测脚手架 + Admin 可选危险区；<strong class="font-semibold">非</strong> F1</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-AI-05 F1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">工厂/仓储两类 F1&gt;0.75</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">⬜ 推迟到 <a href="/guide/customer-confirmation.html" class="link_a7cea  link_a9ef4 inline-link_f855c">客户确认</a>；须真集 + 非 stub；禁止 fixture/stub/家庭跌倒集</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">误报率 &lt; 15%</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">空帧 FP 已汇报</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">⬜ <code>emptyGtFalsePositiveRate</code> 不得勾选</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-RUL-05</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">MQTT 出站</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 可选 <code>MQTT_URL</code>；本机 Mosquitto 可收 full AlertEvent JSON（care 跳过）；元数据 Cloud Sync；2.0.53：单测证明 drill-shaped AlertEvent 保留 <code>drill</code> / <code>clipKind</code> / <code>sittingHoldMs</code>（无 clipRef/care）；2.0.60：单测证明 care <strong class="font-semibold">仍</strong>跳过（即便 payload 另有 lab <code>drill</code>；care 永不 MQTT；lab drill 元数据仅当 care 缺席）；2.0.61：对比诚实——EventsHub（FR-ADM-03）可推 care+drill，MQTT <strong class="font-semibold">仍</strong>跳过 care（Admin WS ≠ MQTT care 策略）；2.0.62：对比诚实——Webhook（FR-RUL-04）可投 care+drill，MQTT <strong class="font-semibold">仍</strong>跳过 care（Webhook/EventsHub ≠ MQTT care 策略；webhook 可带 care，MQTT 永不）；<strong class="font-semibold">非</strong> SB 生产、<strong class="font-semibold">非</strong> TB 遥测；非 bytes/MP4/VOD</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-RUL-06</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">邮件/企微/钉钉</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 渠道+模板；PATCH 不可改 type；钉钉省略 secret 保留；SMTP 空则邮件 no-op；群机器人；lab 可选模板占位 <code>{{clipRef}}</code> <code>{{clipKind}}</code> <code>{{behavior}}</code> <code>{{clipJpegCount}}</code> <code>{{clipDurationMs}}</code> <code>{{sittingHoldMs}}</code> <code>{{lyingHoldMs}}</code> <code>{{stillHoldMs}}</code> <code>{{fallHoldMs}}</code> <code>{{loiterHoldMs}}</code> <code>{{nightHoldMs}}</code> <code>{{vacantHoldMs}}</code> <code>{{aloneHoldMs}}</code> <code>{{drill}}</code>（Event Engine <strong class="font-semibold">提醒</strong>元数据；Admin Notify 文档化；<strong class="font-semibold">不是</strong>通知内嵌视频 / <strong class="font-semibold">不是</strong> raw JPEG 字节）；<code>deploy/.env.example</code> 文档化 remaining HoldMs + Cloud Sync 元数据；HoldMs / clipKind 仍 2.0.39–2.0.46；2.0.49：notification-dispatcher 测试证明自定义模板插值 remaining HoldMs + clipKind 进企微/邮件文本（提醒元数据路径）；2.0.51：email subject/body + DingTalk 模板插值 HoldMs/clipKind（测试）；2.0.57：可选 <code>{{drill}}</code>（<code>payload.drill === true</code> → <code>&quot;true&quot;</code>，否则空串）；Admin Notify hint 文档化 <code>drill</code>；2.0.58：email subject/body + DingTalk 模板插值 <code>{{drill}}</code>（与企微 parity；测试）——lab webhook drill / 提醒 metadata only，<strong class="font-semibold">不是</strong>生产指标 / <strong class="font-semibold">不是</strong> MP4/VOD / <strong class="font-semibold">不是</strong> care；<strong class="font-semibold">非</strong> ESP SLA</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-EDG-05</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">设备身份</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ edge-nodes hashed token + 能力位；可 PATCH name 与完整 capabilities（不含 face）；<code>desiredPackageId</code> / <code>cameraId</code> 可 PATCH 含 null 解绑；可 DELETE 节点（不删摄像头）；<strong class="font-semibold">非</strong> TPM</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-AI-01 / FR-ADM-06</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">人脸库</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 默认关；名单库存 + PATCH；Admin 可填/清除 photoRef；<code>STUB_FACE</code>；<strong class="font-semibold">非</strong>生产识别 / 照片字节</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-EDG-04</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">签名 OTA</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ Ed25519 + Runtime 回滚；可 PATCH artifactUrl；可删库存并解绑节点；<strong class="font-semibold">非</strong> TPM / 固件 / 生产 PKI</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-ECO-03</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">camera ↔ device</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ <code>syncrobrainDeviceId</code> + 签名 Webhook 进 SyncroBrain Inbox（integration-verified）；MQTT 可选且禁止 care</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-AI-06</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">员工离岗/玩手机</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 默认关；<code>STUB_STAFF</code>；可选 zone；<strong class="font-semibold">非</strong>生产监管</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7">出站示例：<a href="/guide/outbound.html" class="link_a7cea  link_a9ef4 inline-link_f855c">告警出站</a> · <a href="/ecosystem/syncrobrain.html" class="link_a7cea  link_a9ef4 inline-link_f855c">接入 SyncroBrain</a> · <a href="/guide/edge.html" class="link_a7cea  link_a9ef4 inline-link_f855c">边缘节点</a> · <a href="/guide/face.html" class="link_a7cea  link_a9ef4 inline-link_f855c">人脸名单</a> · <a href="/guide/staff.html" class="link_a7cea  link_a9ef4 inline-link_f855c">员工行为</a> · <a href="/guide/eval.html" class="link_a7cea  link_a9ef4 inline-link_f855c">工厂评测</a> · <a href="/guide/customer-confirmation.html" class="link_a7cea  link_a9ef4 inline-link_f855c">客户确认</a> · <a href="/guide/guardian.html" class="link_a7cea  link_a9ef4 inline-link_f855c">Guardian 试点</a>。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">禁止用代码勾选</strong>：跌倒 F1 &gt; 0.75、误报率 &lt; 15%、OEM 付费意向、<code>vistacast-v0.2.0</code>。P1 入口：<a href="https://github.com/VistaCast/vistacast/blob/main/spec/m2-sentinel-playbook.md" target="_blank" rel="noopener noreferrer" class="link_a7cea  link_a9ef4 inline-link_f855c">m2-sentinel-playbook</a> §1.2。</p>
+<h2 id="m3-p0-fr非生产试点" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">M3 P0 FR（非生产试点）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#m3-p0-fr非生产试点">#</a></h2>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">FR</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">描述</th>
+<th align="center" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-CAR-01</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">家庭 / 联系人 / 级联</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 独立 household；child → neighbor → <code>human_review</code>；非真户</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-CAR-02</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">30–60s 确认（缺省 45）</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ server 状态机；AI 不得升级</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-BHV-01</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">看护跌倒语义</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 可选 <code>alert.v1.care</code>；无 care 的 fall 仍是工厂；<strong class="font-semibold">非</strong>看护准确率</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-OEM-01</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">激活 + 幂等计量</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ secret 一次；lab/fixture <code>krEligible=false</code></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-OEM-03/04</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">设备 claim + edge 绑定</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 无 JWT；token 只铸造一次；错 secret 401</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-CAR-03</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">家庭成员</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 登录主体；不是 contact；operator 不可删</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-ICE-01/02/03</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">ICE DTO + HMAC TURN + 遥测</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 信令仍私有；无 secret 回退静态；不计费</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-ICE-04</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">共享 coturn 模块</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ realm / 前缀 / 配额；不是付费 SFU</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-RTC-06</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">OEM P2P adapter</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 仅 <code>lab-jpeg</code>；<strong class="font-semibold">不是</strong>真机 NAT</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-EDG-06</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">SoC / 双平面 OTA</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 问卷校验 + 固件暂存；<strong class="font-semibold">不是</strong>刷 ROM</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PRV-04</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">同意 + 敏感房间</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ fail-closed；法律文本仍 ⬜</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-OEM-02</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">租户品牌 overlay</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 名称/Logo/主色；<strong class="font-semibold">商店 App / APNs 仍 ⬜</strong></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-EDG-09</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">窗口内 YOLO</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ <code>client-infer</code> ORT WASM；无权重不假装检出；WASM 窗口 <strong class="font-semibold">不是</strong> <code>ai</code> EventEngine（居家规则在 <code>ai</code>）；<strong class="font-semibold">不是</strong>生产 F1 / <strong class="font-semibold">不是</strong> JS 生产 YOLO</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-EDG-10</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">窗口内 Chat LLM</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ transformers.js；<strong class="font-semibold">不是</strong> VistaCast 云 GPU；云端视觉 LLM <strong class="font-semibold">延期</strong></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-AI-09</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">推理平面</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 Runtime 选路已落地；盒子自运维常驻；<strong class="font-semibold">不是</strong> 平台 24/7 SLA；<strong class="font-semibold">不是</strong> NPU</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-AI-10</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Cloud Bridge 计量</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 按帧/次预占 + 429/409 切断；健康边缘不走云；<strong class="font-semibold">宣布已售仍 ⬜</strong></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-AI-11</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">无 App 取帧</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 本机 <code>ai</code> 可拉 RTSP/RTMP/HLS/SRT/MJPEG 及 WHIP/国标网关再发布；多租户托管 ingest / OEM 推未做</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PLT-16 / FR-MOD-*</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">托管进流 / 定制模组</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">⬜ 规格：<a href="/guide/deployment-modes.html" class="link_a7cea  link_a9ef4 inline-link_f855c">接入路径</a> · <a href="/guide/camera-module.html" class="link_a7cea  link_a9ef4 inline-link_f855c">模组</a></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PLT-17</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">前期 24/7 承诺门闩</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ 文档：不承诺平台 24/7，除非已售定制模组或付费云监控；断连禁止 server 接管</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-AI-13</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">YOLO+Pose+Track</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 <code>ai</code> lab track + stub pose + STUB_BEHAVIOR + extras.zoneInside（质心在多边形内占用；server 仅 === true 拷贝；Admin tag；不是 zoneEnter 边沿、不是 loiteringHint、不是新 AlertKind、不是 60 分钟 SLA） / extras.loiteringHint（几何须静止 + zoneInside 区内占用；<code>zoneEnter</code> 仍是边沿；<code>STUB_LOITER</code> 无 zone 仍发；<code>BEHAVIOR_LOITER_SEC</code> 默认 0=帧路径 loiteringHint，<code>&gt;0</code> per-track <code>loiterSince</code> wall-clock（静止+inZone），非 60 分钟 SLA；<code>STUB_LOITER</code> 未改） / extras.loiterHoldMs（loiteringHint 且 <code>BEHAVIOR_LOITER_SEC&gt;0</code> 时整数 1–3600000；默认 0=帧路径 <strong class="font-semibold">omit</strong>；<code>STUB_LOITER</code> 仍 <strong class="font-semibold">omit</strong>；3600000 是 extras 上限，非 60 分钟生产 SLA / 非 extra= / 非 CSV / 非 clip 闸门本身——loiteringHint 已可 clip / 非新 AlertKind） / occupied / vacant（<code>BEHAVIOR_VACANT_SEC</code> 默认 0=vacantFrames，<code>&gt;0</code> empty-episode wall-clock，非 24/7） / extras.vacantHoldMs（vacant 且 <code>BEHAVIOR_VACANT_SEC&gt;0</code> 时整数 1–3600000；默认 0=vacantFrames 路径则 <strong class="font-semibold">omit</strong>；<code>STUB_VACANT</code> 仍 <strong class="font-semibold">omit</strong>；3600000 是 extras 上限，非 24/7 无人 SLA / 非 extra= / 非 CSV / 非 clip 闸门本身——vacant 已可 clip / 非新 AlertKind） / entered / left / nightActivityHint（<code>NIGHT_HOLD_SEC</code> 默认 0=时段窗即时 hint；<code>&gt;0</code> per-track <code>nightSince</code> 延迟；<code>STUB_NIGHT</code> 仍即时；可选 NIGHT_TZ 空=UTC，不是 F1 / 不是 24/7） / extras.nightHoldMs（nightActivityHint 且 <code>NIGHT_HOLD_SEC&gt;0</code> 时整数 1–3600000；默认 0=即时 hint <strong class="font-semibold">omit</strong>；<code>STUB_NIGHT</code> 仍 <strong class="font-semibold">omit</strong>；不是夜间 F1 / 不是 24/7 / 不是 extra= / 不是 CSV / 不是 clip 闸门本身——nightActivityHint 已可 clip） / personCount（整数 0–32，0=vacant；场景占用自 <code>countPersons</code>，不是人群模型；Admin 计数 tag；控制面无视频字节；personCount / occupied / zoneInside 仍不开 clip；extras.clipScreenshot 会开 clip（lab fixture 复核，不是 F1 eval）） / petHint / childAloneHint / childNearObjectHint / personAloneHint（<code>BEHAVIOR_ALONE_FRAMES</code> 默认 0=关；<code>BEHAVIOR_ALONE_SEC</code> 默认 0=该帧路径，<code>&gt;0</code> wall-clock；几何恰好一人 N 帧；非儿童检测器；<code>STUB_CHILD_ALONE</code> 未改） / extras.aloneHoldMs（personAloneHint 且 <code>BEHAVIOR_ALONE_SEC&gt;0</code> 时整数 1–3600000；默认 0=aloneFrames 路径/关则 <strong class="font-semibold">omit</strong>；3600000 是 extras 上限，非 60 分钟独处 SLA / 非儿童检测器 / 非 extra= / 非 CSV / 非 clip 闸门本身——personAloneHint 已可 clip / 非新 AlertKind） / nearObjectHint（<code>NEAR_OBJECT_DIST</code> 默认 0=关；几何质心距 unknown/vehicle bbox；非危险物品检测器；<code>STUB_CHILD_NEAR_OBJECT</code> 未改）；per-track sittingSince / lyingSince：<code>BEHAVIOR_SITTING_SEC</code> / <code>BEHAVIOR_LYING_SEC</code> 默认 0（帧路径，<strong class="font-semibold">omit</strong> extras.sittingHoldMs / lyingHoldMs）；<code>&gt;0</code> wall-clock 不受 HISTORY_CAP=60 限制；当 sitting_long 且 SEC&gt;0 时 extras.sittingHoldMs 整数 1–3600000（3600000 是 extras 上限以便 SEC=3600 可出现 60 min 墙钟，非 60 分钟生产 SLA / 非 extra= / 非 CSV / 非 clip 闸门本身 / 非新 AlertKind）；lying_long 且 <code>BEHAVIOR_LYING_SEC&gt;0</code> 时 extras.lyingHoldMs 1–3600000（默认 0 <strong class="font-semibold">omit</strong>）；per-track stillSince：<code>BEHAVIOR_STILL_SEC</code> 默认 0（帧路径 <code>no_movement</code>，<strong class="font-semibold">omit</strong> extras.stillHoldMs）；<code>&gt;0</code> wall-clock 不受 HISTORY_CAP=60 限制（非无活动 SLA）；当 no_movement 且 SEC&gt;0 时 extras.stillHoldMs 整数 1–3600000；<code>BEHAVIOR_FALL_HOLD_SEC</code> 默认 0=2 帧 poseFallHint，无 extras.fallHoldMs；<code>&gt;0</code> 水平保持才延迟 hint；当 poseFallHint 发出且 hold&gt;0 时 extras.fallHoldMs 整数 1–60000（墙钟自 per-track fallSince；非 anomaly=fall / 非自动 120 / 非 10s 生产 SLA / 非 extra= flag / 非 CSV 列 / 非 F1）；poseFallHint 不升级；Admin 仅 payload flag 严格 true 出 tag，无播放器；extras.clipScreenshot 当末帧 jpg 已写时 true（Admin tag；控制面无字节 / 无播放器）；lab clip 附着时 stamp `extras.clipKind: &quot;jpeg_ring&quot;</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-SCN-03</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">居家安全包</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 包 JSON 可加载；<code>hasEvalSet</code> 仍 false（2.0.61：shared/ai 显式单测锁定；packs ≠ F1；<code>ai/src/infer/fixtures/</code> 复核 ≠ F1；2.0.53：<code>webhook-drill-sample.json</code> 镜像 Admin webhook drill extras（<code>drill</code> + <code>clipKind: jpeg_ring</code> + <code>sittingHoldMs</code>；无 clipRef；≠ F1；不是 clip 闸门）；2.0.55：<code>ai</code> 单测锁定 <code>extras.drill</code>（及 HoldMs/clipKind alone）<strong class="font-semibold">不是</strong> clip 闸门；2.0.58：map/ingest 保留 <code>extras.drill</code>（lab metadata mirror；<strong class="font-semibold">不是</strong> clip 闸门）；2.0.59：<code>sanitizeCareExtras</code> <strong class="font-semibold">保留</strong> lab <code>drill</code>，<strong class="font-semibold">剥离</strong> <code>call_120</code> / stage / escalate（非 auto-120 / 非 care 生产）；含 <code>clip-jpeg-ring.json</code>：clipRef + clipJpegCount + clipDurationMs + clipScreenshot 供人工复核；fixtures 可选含 <code>*HoldMs</code> 整数及 <code>*-hold-ms-only.json</code>（loiter/night/vacant/alone；2.0.50 另含 lying/still/fall；人工复核 ≠ F1），HoldMs alone 不是 clip 闸门 / 不是 extra= / 不是 CSV extras 列；HoldMs 仍 2.0.39–2.0.43；lab clip 附着可 stamp <code>extras.clipKind</code> jpeg_ring</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PRV-06</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">事件剪辑 opt-in</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 <code>ai</code> CLIP_ENABLED 默认关；开则 lab:// + 编号 JPEG 序列 + 末帧 <code>{id}.jpg</code>（非 MP4）。<code>CLIP_SCREENSHOT</code> 默认 false；当 true 且 CLIP_ENABLED 为 false：仅末帧 <code>{id}.jpg</code> + clipRef，无编号 ring（非 MP4 / 非 5–15s 编码视频 / 非 30 天点播）。CLIP_ENABLED 仍写编号 JPEG ring + 末帧 jpg。<code>CLIP_SECONDS</code> 默认 0=CLIP_RING_SIZE，5–15≈关键帧间隔 JPEG ring（非 MP4 / 非编码视频 / 非 30 天点播）；亦可挂 poseFallHint / childZoneHint / loiteringHint / petHint / childAloneHint / childNearObjectHint / personAloneHint / nearObjectHint（仍 JPEG ring 或末帧截图）；personCount / occupied / zoneInside 仍不开 clip；extras.clipScreenshot 会开 clip（lab fixture 复核，不是 eval）；ingest extras.clipJpegCount 1–32（编号 ring 长度，不是截图 flag）；extras.clipDurationMs 整数 1–60000（JPEG ring 墙钟 last−first <code>occurredAt</code>；CLIP_ENABLED 写 ≥2 帧才设；sidecar 可重复 durationMs；CLIP_SCREENSHOT-only 不设；不是 CLIP_SECONDS*1000、不是 muxed MP4、不是 5–15s 编码视频、不是 extra= flag）；extras.clipScreenshot=true 当末帧 jpg 已写；GET <code>/v1/alerts</code> 可选 <code>extra=clipScreenshot</code>（FR-ADM-04 allowlist；未知 extra 400；不是单页客户端过滤；CSV 无 extras 列；clipJpegCount / clipDurationMs / fallHoldMs / sittingHoldMs / lyingHoldMs / stillHoldMs / loiterHoldMs / nightHoldMs / vacantHoldMs / aloneHoldMs 整数不进 extra=；loiterHoldMs / nightHoldMs / vacantHoldMs / aloneHoldMs 不是 clip 闸门本身（loiteringHint / nightActivityHint / vacant / personAloneHint 已可 clip）；lab Event Engine 剪辑路径仍是 JPEG ring（<code>CLIP_ENABLED</code> 编号 JPEG + 末帧 jpg）和/或末帧截图（<code>CLIP_SCREENSHOT</code>），<strong class="font-semibold">不是</strong> muxed MP4、<strong class="font-semibold">不是</strong> 5–15s 编码短视频上传、<strong class="font-semibold">不是</strong> 30 天云端点播/Admin 视频播放器；<code>clipDurationMs</code> 是 JPEG ring 墙钟跨度，不是编码时长；<code>CLIP_SECONDS</code> 5–15 仅定 JPEG ring 槽位，<strong class="font-semibold">不得</strong>写成 <code>CLIP_SECONDS*1000</code> extras）；clip sidecar `kind: &quot;jpeg_ring&quot;</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PLT-10</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">多协议进流</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 ffmpeg + MediaMTX/ZLM 网关；禁止厂商 App P2P</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-OEM-08</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">ESP32 套件</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 <code>hardware/esp32/</code> 参考组装；不是量产模组</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-EDG-11</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Android 矩阵</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 口径 + 报告字段；<strong class="font-semibold">未</strong>真机测；WASM ≠ NPU</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-OEM-07</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Capability API</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">✅ lab GET 目录；不是白牌、不是已售云桥</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-EDG-12</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Native NNAPI</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 具名 SHIM + 诚实报告；<strong class="font-semibold">不是</strong>真 EP；矩阵未勾</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-AI-12</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">云桥商业 SKU</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 套餐 + entitlement + Stripe webhook 形状；单价 0；<strong class="font-semibold">不是</strong> 已售</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-OEM-09 / FR-PLT-11</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">商店 / tag</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 listing 草稿 + dry-run；禁止 Agent 提交或打 tag</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-UX-04</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">设备接入中心</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 Web <code>/setup</code>；Desktop/RN 深链；<strong class="font-semibold">不是</strong>三份表单、<strong class="font-semibold">不是</strong>厂商 P2P</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fr-eco-05-doerflowm4-可选非生产" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">FR-ECO-05 DoerFlow（M4 可选，非生产）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#fr-eco-05-doerflowm4-可选非生产">#</a></h2>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">FR</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">描述</th>
+<th align="center" class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-ECO-05</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">视觉事件 → DoerFlow inbox / invoke</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 默认关；HMAC CloudEvents；<code>data</code> <strong class="font-semibold">summary-only</strong>（<code>vistacastAlertEventDataSchema</code>），<strong class="font-semibold">不</strong>携带 clipKind / HoldMs / JPEG；2.0.50：schema <strong class="font-semibold">显式拒绝</strong> clipKind / HoldMs / clipRef（仅 rejection 测试；schema <strong class="font-semibold">未</strong>扩展）；2.0.52：server 抽出 <code>buildDoerflowAlertEventData</code>；单测证明 AlertEvent 带 clipKind/HoldMs 时仍 summary-only；2.0.57：单测锁定 drill-shaped AlertEvent 时 <code>data</code> 仍丢弃 drill/clipKind/HoldMs（summary-only；DoerFlow <strong class="font-semibold">不是</strong> Event Engine extras 平面）；2.0.58：shared <code>vistacastAlertEventDataSchema</code> <strong class="font-semibold">显式拒绝</strong> <code>drill</code>（同 clipKind/HoldMs/clipRef；仅 rejection 测试；schema <strong class="font-semibold">未</strong>扩展）；元数据 Cloud Sync 在 Webhook / MQTT / <code>/v1/events</code> / Notify，<strong class="font-semibold">不是</strong> DoerFlow inbox extras；<strong class="font-semibold">不</strong>扩展 shared schema；<strong class="font-semibold">不是</strong>远程调试；<strong class="font-semibold">不得</strong>自动 ack/resolve；stub / face / staff / fall / smoke <strong class="font-semibold">拒绝生产</strong></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-ECO-07</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">smart-site 发送器</td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 默认关；HMAC hint / <code>sourceRef</code> 深链 / export CORS；2.0.51：同 FR-ECO-01 sanitize <strong class="font-semibold">保留</strong> clipKind/*HoldMs、<strong class="font-semibold">剥离</strong> clipRef/care/jpeg-ish/credential（shared 单测）；2.0.56：同 FR-ECO-01 <strong class="font-semibold">另保留</strong> lab <code>payload.drill</code>（仍剥离 clipRef/care/media-shaped；非生产指标 / 非 MP4/VOD / 非 care）；<strong class="font-semibold">未</strong>接真实兄弟端点；<strong class="font-semibold">不得</strong>自动 ack/resolve</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FR-PLT-15</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Entitlement <code>:3040</code></td>
+<td align="center" class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">🟡 <code>service</code> 只探 <code>GET /ready</code>（detail=probe-only）；<strong class="font-semibold">不是</strong> SKU 授权；Cloud Bridge 仍按 env 切断</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7"><strong class="font-semibold">仍阻塞</strong>：OEM 付费 NRE/小批量、真实固件刷写/真机 NAT、看护准确率、法律同意、合作方责任、商店 App/APNs、<code>vistacast-v0.3.0</code>。系统 <strong class="font-semibold">禁止</strong> 自动拨打 120，也 <strong class="font-semibold">禁止</strong> 提供健康诊断。</p>
+<p class="my-4 leading-7">playbook §6 本机 lab 已全部勾选（MediaMTX / stub / Node+werift 预览，非真机 Chrome）。完整矩阵：<a href="https://github.com/VistaCast/vistacast/blob/main/spec/implementation-status.md" target="_blank" rel="noopener noreferrer" class="link_a7cea  link_a9ef4 inline-link_f855c"><code>spec/implementation-status.md</code></a></p><!--/$--></div><div class="rspress-doc-footer"><footer class="mt-8"><div class="xs:flex pb-5 px-2 justify-end items-center"></div><div class="flex flex-col"></div><div class="flex flex-col sm:flex-row sm:justify-around gap-4 pt-6"><div class="prev_c92d1 flex flex-col"><a href="/engineering/m3-acceptance.html" class="link_a7cea pager-link_e0d2d"><span class="desc_dcc01">Previous Page</span><span class="title_a3acb">M3 P0 验收编排</span></a></div><div class="next_c11be flex flex-col"></div></div></footer></div></div><div class="aside-container_bc5fa"><div class="flex flex-col"><div id="aside-container" class="relative text-sm font-medium"><div class="leading-7 block text-sm font-semibold pl-3">ON THIS PAGE</div><nav class="mt-1"><ul class="relative"><li><a href="#里程碑" title="里程碑" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">里程碑</span></a></li><li><a href="#文档--spec" title="文档 / Spec" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">文档 / Spec</span></a></li><li><a href="#代码仓" title="代码仓" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">代码仓</span></a></li><li><a href="#m1-核心-fr摘要" title="M1 核心 FR（摘要）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">M1 核心 FR（摘要）</span></a></li><li><a href="#m2-核心-fr摘要" title="M2 核心 FR（摘要）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">M2 核心 FR（摘要）</span></a></li><li><a href="#m3-p0-fr非生产试点" title="M3 P0 FR（非生产试点）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">M3 P0 FR（非生产试点）</span></a></li><li><a href="#fr-eco-05-doerflowm4-可选非生产" title="FR-ECO-05 DoerFlow（M4 可选，非生产）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">FR-ECO-05 DoerFlow（M4 可选，非生产）</span></a></li></ul></nav></div></div></div></div></div></div></section></div>
+    <div id="search-container"></div>
+  </body>
+</html>
