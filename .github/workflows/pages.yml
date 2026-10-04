@@ -1,0 +1,51 @@
+name: Deploy Docs
+
+# 源码在本仓。构建后推到 gh-pages，GitHub Pages 使用 docs.vistacast.dev。
+# 不要部署到 Cloudflare Pages。
+on:
+  push:
+    branches: [dev, main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vistacast-docs-pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install
+        run: npm ci
+        env:
+          NODE_ENV: development
+
+      - name: Build
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Custom domain CNAME
+        run: printf 'docs.vistacast.dev\n' > doc_build/CNAME
+
+      - name: Publish gh-pages
+        working-directory: doc_build
+        run: |
+          git init
+          git checkout -b gh-pages
+          git add -A
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "deploy: docs @ ${{ github.sha }}"
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/VistaCast/docs.git"
+          git push -f origin gh-pages

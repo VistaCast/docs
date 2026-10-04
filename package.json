@@ -1,0 +1,18 @@
+{
+  "name": "@vistacast/docs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "VistaCast documentation site (Rspress)",
+  "scripts": {
+    "dev": "rspress dev --port 13102",
+    "build": "rspress build && node scripts/publish-ai-reservation.mjs",
+    "preview": "rspress preview --port 13102"
+  },
+  "devDependencies": {
+    "rspress": "^1.43.0"
+  },
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=11"
+  }
+}
