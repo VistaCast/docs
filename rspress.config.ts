@@ -97,9 +97,7 @@ export default defineConfig({
       "/architecture/": [
         {
           text: "架构",
-          items: [
-            { text: "架构概览", link: "/architecture/overview" },
-          ],
+          items: [{ text: "架构概览", link: "/architecture/overview" }],
         },
       ],
       "/ecosystem/": [
