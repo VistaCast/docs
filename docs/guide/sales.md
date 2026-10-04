@@ -1,38 +1,22 @@
-# 销售一页纸（私有化 Enterprise）
+# 报价与销售资料
 
-给客户现场演示用。不是 Guardian 商用关闭声明。
+## 一句话
 
-## 现在能卖什么
+VistaCast：把已有摄像头变成可运营的视觉能力——客流、安防、产线光学与看护，同一平台，可私有化。
 
-**VistaCast M1 Horizon（Enterprise）**：已有 ONVIF/RTSP 摄像头 → 私有化 Docker → 客流、区域入侵、离线告警、Admin、按需 P2P 预览。
+## 常见客户问题
 
-运营可手工开通合同与云识别次数（软运营）；中央收银可接线。**单价空白 = 未售**，见 [空白报价单](/guide/quote-sheet) · [试点演示](/guide/pilot-demo)。
+| 问题 | 回答要点 |
+|------|----------|
+| 要换摄像头吗？ | 兼容常见 ONVIF / RTSP，优先利旧 |
+| 和 NVR 什么关系？ | 事件与 AI 运营层，不是换一台录像机 |
+| 数据是否必须上云？ | 支持私有化；预览按需，检测可在边缘 |
+| 和 VistaRemote？ | VistaCast 负责感知与告警；VistaRemote 负责远程人工介入 |
+| 产线光学是否另买一套？ | 同一平台上的工厂场景，按工位开通 |
 
-| 能演示 | 必须口头说明 |
-| :--- | :--- |
-| 单节点 Compose，约 30 分钟起栈 | 检测默认 stub，不是生产准确率 |
-| Admin 规则 / 告警 / 客流小时快照 | 预览默认可选 JPEG DataChannel 或 H264 WebRTC；都走 P2P/TURN，不是 API 转封装 |
-| 私有化 overlay：回环绑定、禁演示摄像头、备份脚本、TLS 示例 | 不是 K8s 托管盘 |
-| 租户品牌 overlay（名称 / Logo URL / 主色） | 不是商店白牌 App，不是推送证书 |
-| thin TypeScript 客户端仓 | 不是已发布 npm / 不是 C 端 SDK |
-| 门店盒子一键脚本 + Electron/RN 窗口 YOLO/Chat | `ai` 仍跑 RTSP；窗口 WASM 不是云 GPU、不是 NPU、不是商店 App、不是生产准确率 |
+## 商务材料
 
-三条平面与云桥口径见 [混合推理](/guide/hybrid-infer)。Android 认证下限见 [设备矩阵](/guide/device-matrix)（**未**真机测）。
-
-**不承诺 24/7 值班**（除非合同写明已售定制摄像头或付费云监控）。门店盒子通电可以一直跑检测，那是客户自运维，不是 VistaCast SLA。只装 App **不等于** 有人值班。不是「YOLO 摄像头」；卖的是事件与 Runtime。默认不做全流大模型理解。
-
-
-## 还不是
-
-- 家庭看护 / OEM 激活计量：**非生产试点**，lab/fixture `krEligible=false`
-- 已售 Cloud Bridge / 自建 GPU / 「无端无盒全云检测」
-- **平台 24/7 值班**（未售定制模组 / 未售云监控）
-- 真机 NAT 首帧、刷 ROM、已付 OEM NRE
-- App Store / TestFlight / APNs / FCM
-- 生产 tag `vistacast-v0.3.0`（M1 的 `v0.1.0` 仅创始人确认后打）
-
-## 建议下一步
-
-1. 用客户摄像头跑 M1 私有化试点（客流 / 入侵 / 离线）。
-2. 需要品牌皮肤：Admin Branding，官方 Logo 仍属 VistaCast。
-3. Guardian / OEM 量产另开商务门闩，不把本页写成已关闭。
+- 场景与能力：[目标场景](/product/scenarios) · [能力总览](/product/capabilities)
+- 部署路径：[三种部署方式](/guide/deployment-modes)
+- 演示节奏：[场景演示](/guide/pilot-demo)
+- 计费与开通：[计费说明](/guide/billing) · [开通与授权](/guide/commerce-ops)

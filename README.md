@@ -5,7 +5,7 @@
 这些文档公开供人阅读，也允许搜索引擎索引。**不允许**用于训练 AI，也不允许把文档交给 AI 去生成一套同类产品。详见 [AI-USE.md](./AI-USE.md)。
 
 
-Rspress 用户与开发者文档。源码仓是公开的 [VistaCast/docs](https://github.com/VistaCast/docs)。Meta 仓里的 `docs/` 是同一份工作副本，发布以本仓为准。
+面向**用户与客户**的产品文档（Rspress）：定位、场景、能力、路线图与接入指南。源码仓是公开的 [VistaCast/docs](https://github.com/VistaCast/docs)。研发用的 FR / playbook / 实现状态留在 Meta `spec/`，不在本站展开。
 
 ## 开发
 

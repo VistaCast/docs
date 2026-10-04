@@ -1,71 +1,76 @@
 # 产品路线图
 
-> 完整 FR/US：[`spec/product-roadmap.md`](https://github.com/VistaCast/vistacast/blob/main/spec/product-roadmap.md)
->
-> M1 切片：[`spec/m1-commercial-playbook.md`](https://github.com/VistaCast/vistacast/blob/main/spec/m1-commercial-playbook.md)
->
-> M2 切片：[`spec/m2-sentinel-playbook.md`](https://github.com/VistaCast/vistacast/blob/main/spec/m2-sentinel-playbook.md)
->
-> M3 P0 切片：[`spec/m3-guardian-playbook.md`](https://github.com/VistaCast/vistacast/blob/main/spec/m3-guardian-playbook.md)（**1.1.0**）
->
-> M3.1 切片：[`spec/m3-1-ecosystem-playbook.md`](https://github.com/VistaCast/vistacast/blob/main/spec/m3-1-ecosystem-playbook.md)
->
-> M3.3 切片：[`spec/m3-3-golive-branding-playbook.md`](https://github.com/VistaCast/vistacast/blob/main/spec/m3-3-golive-branding-playbook.md)
->
-> M3.4 切片：[`spec/m3-4-on-device-packaging-playbook.md`](https://github.com/VistaCast/vistacast/blob/main/spec/m3-4-on-device-packaging-playbook.md)
->
-> M3.6 切片：[`spec/m3-6-hybrid-infer-playbook.md`](https://github.com/VistaCast/vistacast/blob/main/spec/m3-6-hybrid-infer-playbook.md)
->
-> M3.8–M3.10 草案：NNAPI / 云桥 SKU / 商店 tag（**未**编码、**未**真机勾、**未**上架）
+VistaCast 的产品规划按阶段推进：先让门店与仓库「接上摄像头就能用」，再做告警质量与工厂场景，再扩展看护 / OEM 与生态联动。下列是**对外产品规划**，不是内部研发日报。
 
-## 时间线
+## 总览
 
 ```text
-D0 Spec 1.1  →  M1 第一商业版  →  M2 Sentinel  →  M3 Embedded  →  M4 Nexus
+蓝图定稿 → 第一商业版 → 告警与工厂增强 → 看护 / OEM → 生态联动
 ```
 
-## 里程碑
+| 阶段 | 主题 | 客户能看到什么 |
+|------|------|----------------|
+| **蓝图** | 产品与架构定稿 | 双轨战略（行业场景 + 看护 / OEM）、统一平台边界 |
+| **第一商业版** | 门店可上线 | ONVIF / RTSP、客流 / 入侵 / 离线、规则与 Webhook、P2P 预览、Docker 私有化 |
+| **告警增强** | 更可信、可运营 | 告警分级与审计、客流报表、工厂异常类型、可选人脸与出站渠道 |
+| **看护 / OEM** | 家庭与品牌合作 | 家庭联系人级联、OEM 激活、边缘与预览加固、门店盒子与端侧壳 |
+| **生态联动** | 空间智能闭环 | DataLuminary 看板模板、跨镜 Re-ID 等进阶能力 |
 
-| 阶段 | 代号 | 主题 | 核心交付 | 状态 |
-|:----:|------|------|----------|:----:|
-| **D0** | Blueprint | Spec 定稿 | 双轨战略、契约、playbook | ✅ 2026-08-31 已签字 |
-| **M1** | Horizon | ToB 可售卖 | ONVIF + 客流/入侵/离线 + P2P + Docker | 🟡 切片已编码，未打 tag |
-| **M2** | Sentinel | 质量 + OEM 意向 | 规则 GA、工厂异常、人脸可选 | 🟡 必须切片 1–9 已编码；P1 人脸/OTA/绑定/员工行为为库存+stub；未打 tag |
-| **M3** | Embedded | OEM / 看护 | SDK、级联通知（商务门闩） | 🟡 P0–M3.5 已编码；**M3.6 切片 0–4 已关**；**未**打 tag |
-| **M4** | Nexus | 生态 | DataLuminary 模板、Re-ID β | ⬜ |
+## 第一商业版
 
-## M1 · 第一商业版
+**目标**：摄像头约 30 分钟上线，能看到客流、区域入侵和离线告警；总部或店长用电脑 / 手机按需预览画面。
 
-**主题**：摄像头上线 30 分钟，看到客流、入侵和离线告警；预览走 P2P。
+**包含**：多租户与站点、ONVIF / RTSP、边缘检测运行时、客流与入侵、规则与去重、Webhook、告警确认 / 误报、Docker Compose。
 
-**包含**：多租户、ONVIF、边缘 Runtime、客流、入侵、规则、Webhook、确认/误报、Docker。
+**后续阶段再展开**：人脸库运营、跌倒看护、白牌 App、量产定制模组、跨产品 BI 模板等。
 
-**不包含**：人脸库、跌倒看护、自动 120、白牌 App、模组、DataLuminary 模板。
+上手路径：[快速开始](/guide/quick-start) · [买摄像头并接入](/guide/add-camera) · [三种部署方式](/guide/deployment-modes)。
 
-## M2 · Sentinel
+## 告警与工厂增强
 
-**主题**：告警可信、规则可分级、工厂异常能识别。OEM 意向是商务 KR，不能用代码勾选。
+**目标**：告警可分级、可审计、可导出；工厂危险区与异常类型可配置；人脸与员工行为按需开启。
 
-**必须编码已关闭（切片 1–9）**：告警分级 + 审计 + 客流报表 + 同摄 AND/OR + REST 导出 + 可选 HTTP 远程 Provider（非 F1）+ 工厂异常 kind+stub（非 F1）+ 可选 MQTT 出站（本机 Mosquitto，非 SB 生产）+ [出站文档](/guide/outbound)。
+**规划能力**：
 
-**仍开放的 P1**：无（编码侧）。人脸库存、签名 OTA 回滚、camera↔device 字段、邮件/企微/钉钉、设备身份、员工离岗均为库存+stub（诚实边界见各文档）。工厂评测脚手架见 [工厂评测](/guide/eval)。真集现场确认推迟，清单见 [客户确认](/guide/customer-confirmation)。跨仓 LuminaryWorks 产品 spec 已对齐。跌倒 F1 与 OEM 付费意向 **禁止**用 stub/代码勾选。**未**打 `vistacast-v0.2.0`。
+- 告警级别、审计日志、客流日 / 周 / 月报表
+- 同摄像头多条件规则、REST 导出
+- 工厂异常（如跌倒 / 烟雾等类型）与评测流程
+- 邮件、企微、钉钉、MQTT 等出站
+- 可选人脸名单、员工行为类检测（默认关闭，尊重隐私）
 
-## M3 · Guardian P0（非生产试点）
+说明见 [告警与出站](/guide/outbound) · [工厂场景评测](/guide/eval)。
 
-**主题**：家庭级联与 OEM 激活可在 lab 跑通；**不得**写成生产完成或白牌。
+## 看护 / OEM
 
-**确定性代码已关闭**：独立 household、联系人级联（最后一跳 `human_review`）、30–60s 确认（缺省 45）、同意 fail-closed、OEM secret 一次、AI 只发候选。说明见 [Guardian 试点](/guide/guardian)。
+**目标**：同一引擎服务家庭看护与摄像头品牌合作；联系人级联通知；OEM 出厂激活与边缘部署。
 
-**仍阻塞（人工/商务）**：OEM 付费 NRE/小批量、真实固件刷写 / 真机 NAT、看护准确率、法律同意、合作方责任、白牌 App/SDK、`vistacast-v0.3.0`。系统 **禁止** 自动拨打 120，也 **禁止** 提供健康诊断。编码侧 M3.2（共享 coturn / `lab-jpeg` / 双平面）见 [ICE / TURN](/guide/ice-turn)、[OEM 伙伴](/guide/oem-partner)、[边缘节点](/guide/edge)。
+**规划能力**：
 
-## 编码启动
+- 家庭空间与联系人级联（需人工确认后再升级通知）
+- 同意与合规流程；系统不自动拨打急救电话，不做健康诊断
+- OEM 设备激活、边缘节点、ICE / TURN 跨网预览
+- 门店盒子、桌面端与手机壳；窗口内识别与混合推理
+- 产线光学（PCB / 组装 / 标签 / 胶路）作为工厂场景扩展
 
-- 不再等待 DataLuminary / BlockyEdu P0
-- playbook 切片 1–10 已编码；tag 门槛见 [实现状态](/engineering/implementation-status)
+说明见 [家庭看护](/guide/guardian) · [OEM 伙伴](/guide/oem-partner) · [产线光学检测](/guide/pcb-aoi)。
 
-## 成功指标（M1）
+## 生态联动
 
-| Objective | Key Results |
-|-----------|-------------|
-| 可售卖闭环 | Compose 可独立跑通；2 个付费/付费试点站点 |
-| 技术可信 | 在线率 > 95%；告警 P95 < 30s |
+**目标**：识别结果进入分析看板，告警驱动物联与远程介入，形成「感知 → 分析 → 介入」闭环。
+
+| 伙伴 | 协作方式 |
+|------|----------|
+| DataLuminary | 结构化事件进 BI / 大屏 |
+| SyncroBrain | 高危告警联动现场设备 |
+| VistaRemote | 人工远程确认与接管 |
+| DoerFlow | 价值与结算网络 |
+
+详见 [LuminaryWorks 生态](/ecosystem/luminaryworks)。
+
+## 成功标准（第一商业版）
+
+| 目标 | 衡量 |
+|------|------|
+| 可独立部署 | Compose / 安装包可在客户环境跑通 |
+| 业务闭环 | 付费或正式试点站点能稳定使用 |
+| 体验可信 | 设备在线率与告警时效达到约定水准 |
