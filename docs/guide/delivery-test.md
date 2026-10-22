@@ -25,7 +25,7 @@
 
 ## 产线光学
 
-若开通产线场景：确认 ROI、工位配置与告警类型符合现场；详见 [产线光学检测](/guide/pcb-aoi) · [工厂场景评测](/guide/eval)。
+若开通产线场景：先做 [现场勘察清单](/guide/site-survey-checklist)，再按 [质检 PoC 手册](/guide/poc-playbook) 采集。确认工位、取像和告警类型符合现场。能力与边界见 [产线光学检测](/guide/pcb-aoi)，抽检顺序见 [工厂场景评测](/guide/eval)。
 
 ## 看护场景
 

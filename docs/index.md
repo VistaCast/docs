@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: 快速开始
       link: /guide/quick-start
+    - theme: alt
+      text: 质检落地
+      link: /guide/poc-playbook
 
 features:
   - title: 兼容存量摄像头
@@ -45,11 +48,24 @@ VistaCast 把固定摄像头变成可编程的视觉传感器：自动巡检、�
 |------|----------------|
 | 商业零售 | 客流、时段对比、高峰预警 |
 | 仓储物流 | 夜间值守、周界与离线提醒 |
-| 产线光学 | 缺件、偏移、焊点与在位检测 |
+| 产线光学 | 缺件、焊点外观与在位检测。现场路径见下方「质检怎么落地」 |
 | 工业安全 | 危险区人员与异常提示 |
 | 居家看护 | 跌倒与夜间异常，通知到人（不自动拨打急救电话，不做健康诊断） |
 
 完整规划见 [产品路线图](/guide/roadmap)；怎么接到现场见 [三种部署方式](/guide/deployment-modes)。
+
+## 质检怎么落地
+
+从现场勘察到两周采集，用客户自己的板形成实测账本和上线就绪度。
+
+| 文档 | 用途 |
+|------|------|
+| [质检 PoC 手册](/guide/poc-playbook) | 线索、勘察、采集、汇报、转正，以及合同要点 |
+| [现场勘察清单](/guide/site-survey-checklist) | 板子、节拍、信号、环境、验收标准和样本 |
+| [SMT 与波峰焊取像](/guide/smt-wave-imaging) | 离线与在线机位，缺陷在哪一面可见 |
+| [光照与相机选型](/guide/lighting-camera-selection) | 分辨率、光源、相机和识别主机 |
+| [证据保留策略](/guide/quality-evidence-retention) | 原图和记录留多久，数据默认留在现场 |
+| [产线光学检测](/guide/pcb-aoi) | 能力范围。边界集中在该页末节 |
 
 ## 在生态中的位置
 

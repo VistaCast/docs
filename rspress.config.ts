@@ -75,6 +75,16 @@ export default defineConfig({
           ],
         },
         {
+          text: "质检落地",
+          items: [
+            { text: "质检 PoC 手册", link: "/guide/poc-playbook" },
+            { text: "现场勘察清单", link: "/guide/site-survey-checklist" },
+            { text: "SMT 与波峰焊取像", link: "/guide/smt-wave-imaging" },
+            { text: "光照与相机选型", link: "/guide/lighting-camera-selection" },
+            { text: "证据保留", link: "/guide/quality-evidence-retention" },
+          ],
+        },
+        {
           text: "商业与交付",
           items: [
             { text: "计费说明", link: "/guide/billing" },
