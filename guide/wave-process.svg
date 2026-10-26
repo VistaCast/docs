@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 168" role="img">
+  <title>波峰焊产线，取像在冷却之后</title>
+  <rect width="880" height="168" fill="#f4f7fb"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8c9bab"/>
+    </marker>
+  </defs>
+  <g font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="15" text-anchor="middle">
+    <rect x="16" y="48" width="96" height="44" rx="8" fill="#ffffff" stroke="#1677FF"/>
+    <text x="64" y="75" fill="#1d2129">插件</text>
+    <line x1="114" y1="70" x2="132" y2="70" stroke="#8c9bab" marker-end="url(#arr)"/>
+    <rect x="136" y="48" width="96" height="44" rx="8" fill="#ffffff" stroke="#1677FF"/>
+    <text x="184" y="75" fill="#1d2129">载具</text>
+    <line x1="234" y1="70" x2="252" y2="70" stroke="#8c9bab" marker-end="url(#arr)"/>
+    <rect x="256" y="48" width="96" height="44" rx="8" fill="#ffffff" stroke="#1677FF"/>
+    <text x="304" y="75" fill="#1d2129">助焊剂</text>
+    <line x1="354" y1="70" x2="372" y2="70" stroke="#8c9bab" marker-end="url(#arr)"/>
+    <rect x="376" y="48" width="96" height="44" rx="8" fill="#ffffff" stroke="#1677FF"/>
+    <text x="424" y="75" fill="#1d2129">预热</text>
+    <line x1="474" y1="70" x2="492" y2="70" stroke="#8c9bab" marker-end="url(#arr)"/>
+    <rect x="496" y="48" width="96" height="44" rx="8" fill="#ffffff" stroke="#1677FF"/>
+    <text x="544" y="75" fill="#1d2129">波峰</text>
+    <line x1="594" y1="70" x2="612" y2="70" stroke="#8c9bab" marker-end="url(#arr)"/>
+    <rect x="616" y="48" width="96" height="44" rx="8" fill="#ffffff" stroke="#1677FF"/>
+    <text x="664" y="75" fill="#1d2129">冷却</text>
+    <line x1="714" y1="70" x2="732" y2="70" stroke="#8c9bab" marker-end="url(#arr)"/>
+    <rect x="736" y="44" width="120" height="52" rx="8" fill="#1677FF"/>
+    <text x="796" y="75" fill="#ffffff">取像</text>
+  </g>
+  <text x="440" y="132" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="14" fill="#5c6b7a">相机装在冷却之后的出口</text>
+</svg>
