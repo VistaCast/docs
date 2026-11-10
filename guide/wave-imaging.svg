@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 360" role="img">
+  <title>波峰焊取像：W1 离线焊接面，W2 元件面俯拍，W3 焊接面仰拍</title>
+  <rect width="980" height="360" fill="#f4f7fb"/>
+  <g font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans SC, sans-serif">
+    <rect x="16" y="16" width="304" height="328" rx="12" fill="#ffffff" stroke="#e6eaf0"/>
+    <text x="32" y="44" font-size="17" fill="#1677FF">W1 离线目检</text>
+    <rect x="132" y="64" width="64" height="24" rx="4" fill="#1677FF"/>
+    <rect x="154" y="88" width="20" height="8" rx="2" fill="#1d2129"/>
+    <polygon points="164,98 110,156 218,156" fill="#1677FF" fill-opacity="0.12" stroke="#1677FF" stroke-dasharray="4 3"/>
+    <circle cx="128" cy="162" r="5" fill="#d48806"/>
+    <circle cx="148" cy="162" r="5" fill="#d48806"/>
+    <circle cx="168" cy="162" r="5" fill="#d48806"/>
+    <circle cx="188" cy="162" r="5" fill="#d48806"/>
+    <rect x="110" y="168" width="120" height="16" rx="2" fill="#1f7a4d"/>
+    <rect x="96" y="186" width="148" height="12" rx="2" fill="#d0d5dd"/>
+    <text x="32" y="236" font-size="14" fill="#1d2129">焊接面朝上，放进治具</text>
+    <text x="32" y="260" font-size="14" fill="#1d2129">俯拍连锡、漏焊、锡珠、拉尖</text>
+    <text x="32" y="284" font-size="14" fill="#1d2129">扫码或脚踏触发</text>
+    <text x="32" y="316" font-size="13" fill="#5c6b7a">推荐作为采集起点</text>
+    <rect x="336" y="16" width="304" height="328" rx="12" fill="#ffffff" stroke="#e6eaf0"/>
+    <text x="352" y="44" font-size="17" fill="#1677FF">W2 元件面俯拍</text>
+    <rect x="452" y="64" width="64" height="24" rx="4" fill="#1677FF"/>
+    <rect x="474" y="88" width="20" height="8" rx="2" fill="#1d2129"/>
+    <polygon points="484,98 430,150 538,150" fill="#1677FF" fill-opacity="0.12" stroke="#1677FF" stroke-dasharray="4 3"/>
+    <rect x="444" y="136" width="16" height="22" rx="1" fill="#595959"/>
+    <rect x="470" y="128" width="18" height="30" rx="1" fill="#595959"/>
+    <rect x="498" y="140" width="22" height="18" rx="1" fill="#595959"/>
+    <rect x="430" y="158" width="128" height="16" rx="2" fill="#1f7a4d"/>
+    <line x1="360" y1="186" x2="616" y2="186" stroke="#8b95a5" stroke-width="6" stroke-linecap="round"/>
+    <text x="352" y="236" font-size="14" fill="#1d2129">输送线上方，元件面朝上</text>
+    <text x="352" y="260" font-size="14" fill="#1d2129">看透锡、漏插、浮高</text>
+    <text x="352" y="284" font-size="14" fill="#1d2129">频闪冻结运动</text>
+    <text x="352" y="316" font-size="13" fill="#5c6b7a">这一面看不到连锡和拉尖</text>
+    <rect x="656" y="16" width="308" height="328" rx="12" fill="#ffffff" stroke="#e6eaf0"/>
+    <text x="672" y="44" font-size="17" fill="#1677FF">W3 焊接面仰拍</text>
+    <line x1="680" y1="150" x2="760" y2="150" stroke="#8b95a5" stroke-width="6" stroke-linecap="round"/>
+    <line x1="860" y1="150" x2="940" y2="150" stroke="#8b95a5" stroke-width="6" stroke-linecap="round"/>
+    <rect x="748" y="132" width="124" height="16" rx="2" fill="#1f7a4d"/>
+    <circle cx="770" cy="128" r="4" fill="#d48806"/>
+    <circle cx="794" cy="128" r="4" fill="#d48806"/>
+    <circle cx="818" cy="128" r="4" fill="#d48806"/>
+    <polygon points="810,250 760,188 860,188" fill="#1677FF" fill-opacity="0.12" stroke="#1677FF" stroke-dasharray="4 3"/>
+    <rect x="786" y="250" width="48" height="20" rx="4" fill="#1677FF"/>
+    <text x="672" y="300" font-size="14" fill="#1d2129">相机在窗口下方朝上</text>
+    <text x="672" y="324" font-size="14" fill="#1d2129">载具开窗，并做防污防热</text>
+  </g>
+</svg>

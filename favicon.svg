@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-label="VistaCast">
+  <defs>
+    <linearGradient id="vc-fg" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1677FF"/>
+      <stop offset="1" stop-color="#36CFC9"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="url(#vc-fg)"/>
+  <path d="M10 12.5L16 23L22 12.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="16" cy="14.5" r="2" fill="#fff"/>
+  <path d="M22.5 11c2.5 1.5 3.2 3.5 3.2 5" stroke="#fff" stroke-opacity="0.45" stroke-width="1.1" stroke-linecap="round"/>
+</svg>

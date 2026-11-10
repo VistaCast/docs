@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 292" role="img">
+  <title>分辨率：视野宽度除以像素宽度，最小特征至少 5 像素</title>
+  <rect width="760" height="292" fill="#f4f7fb"/>
+  <rect x="36" y="28" width="688" height="72" rx="8" fill="#ffffff" stroke="#1677FF" stroke-width="2"/>
+  <text x="380" y="70" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="16" fill="#1d2129">视野（整板或一个分区）</text>
+  <line x1="36" y1="120" x2="724" y2="120" stroke="#1d2129" stroke-width="1.5"/>
+  <line x1="36" y1="112" x2="36" y2="128" stroke="#1d2129" stroke-width="1.5"/>
+  <line x1="724" y1="112" x2="724" y2="128" stroke="#1d2129" stroke-width="1.5"/>
+  <text x="380" y="146" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="14" fill="#1d2129">视野宽度</text>
+  <rect x="36" y="164" width="22" height="26" fill="#1677FF"/>
+  <rect x="60" y="164" width="22" height="26" fill="#69b1ff"/>
+  <rect x="84" y="164" width="22" height="26" fill="#1677FF"/>
+  <rect x="108" y="164" width="22" height="26" fill="#69b1ff"/>
+  <rect x="132" y="164" width="22" height="26" fill="#1677FF"/>
+  <rect x="156" y="164" width="22" height="26" fill="#d9dde7"/>
+  <rect x="180" y="164" width="22" height="26" fill="#d9dde7"/>
+  <rect x="204" y="164" width="22" height="26" fill="#d9dde7"/>
+  <text x="240" y="182" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="14" fill="#5c6b7a">相机像素宽度（示意）。左起 5 格 = 最小特征至少 5 像素</text>
+  <text x="36" y="230" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="18" fill="#1d2129">um/px = 视野宽度（微米）÷ 相机像素宽度</text>
+  <text x="36" y="264" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="16" fill="#1677FF">例：100 mm ÷ 5000 px ≈ 20 微米/px</text>
+</svg>
