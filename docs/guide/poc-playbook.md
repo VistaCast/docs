@@ -131,6 +131,12 @@
 9. **结束。** 两周结束交付报告。客户可以转正，也可以停止。停止后数据仍在客户侧。
 10. **硬件。** 相机、镜头、光源、治具和工控机按 [光照与相机选型](/guide/lighting-camera-selection) 现场配置。合同不绑定品牌。
 
+## 报价与检测器口径（PoC 口头）
+
+- 工位报价脚手架：Meta `artifacts/quotes/quality-station-pack.v1.json`（订阅与买断并列；`unitPrice` 全 null）。
+- 可选行：`vc.optional.ultralytics.commercial`——客户自购 Ultralytics 商业许可时才启用；默认包用 YOLOX，不带 `yolov8n.onnx`。说明见 [报价说明](/guide/quote-sheet)。
+- 不要把实验室合成烟雾召回或公开集分数写进 PoC 合同。
+
 ## 相关文档
 
 - [现场勘察清单](/guide/site-survey-checklist)
@@ -138,3 +144,4 @@
 - [光照与相机选型](/guide/lighting-camera-selection)
 - [证据保留策略](/guide/quality-evidence-retention)
 - [产线光学检测](/guide/pcb-aoi)
+- [报价说明](/guide/quote-sheet)

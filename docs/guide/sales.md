@@ -21,3 +21,4 @@ VistaCast：把已有摄像头变成可运营的视觉能力——客流、安�
 - 部署路径：[三种部署方式](/guide/deployment-modes)
 - 演示节奏：[场景演示](/guide/pilot-demo)
 - 计费与开通：[计费说明](/guide/billing) · [开通与授权](/guide/commerce-ops)
+- 质检报价脚手架与 Ultralytics 可选行：[报价说明](/guide/quote-sheet) · [质检 PoC 手册](/guide/poc-playbook)
